@@ -10,8 +10,14 @@ import { Event } from './event';
    template: `
     <h2>Kommende eventer: </h2>
     <ul class="eventer">
-    <li> her kommer det en liste over eventer </li>
+    <li *ngFor="let event of events" [class.selected]="event===selectedEvent" (click)="onSelect(event)">
+      <span class="badge"> {{event.id}}   </span>{{event.name}}
+    </li>
     </ul>
+    <div *ngIf="selectedEvent">
+      <h2> {{selectedEvent.name}}   </h2>
+      <h3> {{selectedEvent.description}}</h3>
+    </div>
     `
  })
  export class EventsComponent implements OnInit{

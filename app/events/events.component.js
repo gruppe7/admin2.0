@@ -28,7 +28,7 @@ var EventsComponent = (function () {
     EventsComponent = __decorate([
         core_1.Component({
             selector: 'events',
-            template: "\n    <h2>Kommende eventer: </h2>\n    <ul class=\"eventer\">\n    <li> her kommer det en liste over eventer </li>\n    </ul>\n    "
+            template: "\n    <h2>Kommende eventer: </h2>\n    <ul class=\"eventer\">\n    <li *ngFor=\"let event of events\" [class.selected]=\"event===selectedEvent\" (click)=\"onSelect(event)\">\n      <span class=\"badge\"> {{event.id}}   </span>{{event.name}}\n    </li>\n    </ul>\n    <div *ngIf=\"selectedEvent\">\n      <h2> {{selectedEvent.name}}   </h2>\n      <h3> {{selectedEvent.description}}</h3>\n    </div>\n    "
         }), 
         __metadata('design:paramtypes', [event_service_1.EventService])
     ], EventsComponent);
