@@ -1,4 +1,4 @@
-#Author: Elias S. Aukan
+//Author: Elias S. Aukan
 
 export class Event {
   id: number;
