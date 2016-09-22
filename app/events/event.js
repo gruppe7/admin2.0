@@ -1,4 +1,6 @@
 "use strict";
+Author: Elias;
+S.Aukan;
 var Event = (function () {
     function Event() {
     }

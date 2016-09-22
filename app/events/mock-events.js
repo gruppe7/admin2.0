@@ -1,3 +1,4 @@
+//Author: Elias S. Aukan
 "use strict";
 exports.EVENTS = [
     { id: 1, name: 'Skolestart', description: 'skolen begynner' },

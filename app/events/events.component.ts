@@ -1,3 +1,5 @@
+//Auhtor: Elias S. Aukan
+
 import { Component, OnInit } from '@angular/core';
 
 import { EventService } from './event.service'
