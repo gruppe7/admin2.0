@@ -11,7 +11,7 @@ import { Event } from './event';
     <h2>Kommende eventer: </h2>
     <ul class="eventer">
     <li *ngFor="let event of events" [class.selected]="event===selectedEvent" (click)="onSelect(event)">
-      <span class="badge"> {{event.id}}   </span>{{event.name}}
+      <span class="badge"> {{event.eventId}}   </span>{{event.name}}
     </li>
     </ul>
     <div *ngIf="selectedEvent">

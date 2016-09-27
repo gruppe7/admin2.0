@@ -17,8 +17,8 @@ var EventService = (function () {
     EventService.prototype.getEvents = function () {
         return Promise.resolve(mock_events_1.EVENTS);
     };
-    EventService.prototype.getEvent = function (id) {
-        return this.getEvents().then(function (events) { return events.find(function (event) { return event.id === id; }); });
+    EventService.prototype.getEvent = function (eventId) {
+        return this.getEvents().then(function (events) { return events.find(function (event) { return event.eventId === eventId; }); });
     };
     EventService = __decorate([
         core_1.Injectable(), 
