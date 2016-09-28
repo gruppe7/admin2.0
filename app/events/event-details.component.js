@@ -1,4 +1,3 @@
-//Author: Elias S. Aukan
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,21 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var mock_events_1 = require('./mock-events');
-var EventService = (function () {
-    function EventService() {
+var EventDetailComponent = (function () {
+    function EventDetailComponent() {
     }
-    EventService.prototype.getEvents = function () {
-        return Promise.resolve(mock_events_1.EVENTS);
-    };
-    EventService.prototype.getEvent = function (eventId) {
-        return this.getEvents().then(function (events) { return events.find(function (event) { return event.eventId === eventId; }); });
-    };
-    EventService = __decorate([
-        core_1.Injectable(), 
+    EventDetailComponent = __decorate([
+        core_1.Component({
+            selector: 'event-details',
+            template: "\n    <div *ngIf=\"hero\">\n      <h2>{{hero.name}} Detaljer! </h2>\n      <div><label>Navn: </label> {{event.name}}</div>\n      <div>\n        <label>Beskrivelse:</label> {{event.description}}\n      </div>\n    </div>\n  "
+        }), 
         __metadata('design:paramtypes', [])
-    ], EventService);
-    return EventService;
+    ], EventDetailComponent);
+    return EventDetailComponent;
 }());
-exports.EventService = EventService;
-//# sourceMappingURL=event.service.js.map
+exports.EventDetailComponent = EventDetailComponent;
+//# sourceMappingURL=event-details.component.js.map

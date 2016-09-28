@@ -1,7 +1,7 @@
 //Author: Elias S. Aukan
 
 export class Event {
-  id: number;
+  eventId: number;
   name: string;
   description: string;
 }

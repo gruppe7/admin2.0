@@ -1,8 +1,9 @@
 //Author: Elias S. Aukan
 "use strict";
 exports.EVENTS = [
-    { id: 1, name: 'Skolestart', description: 'skolen begynner' },
-    { id: 2, name: 'Eksamensfest', description: 'Fest på Downtown' },
-    { id: 3, name: 'Nyttårsball', description: 'Enda en fest på Downtown' }
+    { eventId: 1, name: 'Skolestart', description: 'skolen begynner' },
+    { eventId: 2, name: 'Eksamensfest', description: 'Fest på Downtown' },
+    { eventId: 3, name: 'Nyttårsball', description: 'Enda en fest på Downtown' },
+    { eventId: 4, name: 'Sommerfest', description: 'Vi feirer sommeren! sted: Downtown' }
 ];
 //# sourceMappingURL=mock-events.js.map
