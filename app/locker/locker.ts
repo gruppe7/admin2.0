@@ -1,7 +1,7 @@
+// Author@Henrik Bjørkheim
 
 
-
-export class Skap {
+export class Locker {
   id: number;
   description: string;
 }
