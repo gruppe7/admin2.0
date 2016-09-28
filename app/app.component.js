@@ -10,14 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var event_service_1 = require('./events/event.service');
+var locker_service_1 = require('./locker/locker.service');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>Velkommen til Admin2.0</h1>\n    <events></events>\n    <locker-detail></locker-detail>\n  ",
-            providers: [event_service_1.EventService]
+            template: "\n    <h1>Velkommen til Admin2.0</h1>\n    <events></events>\n    <lockers></lockers>\n  ",
+            providers: [event_service_1.EventService,
+                locker_service_1.LockerService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

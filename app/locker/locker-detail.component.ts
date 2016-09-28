@@ -9,7 +9,7 @@ import { Locker } from './locker';
   template: `
     <div *ngIf="locker">
       <h2>{{locker.description}} details!</h2>
-      <div><label>id: </label>{{locker.id}}</dib>
+      <div><label>id: </label>{{locker.id}}</div>
       <div>
         <label>description: </label>
         <input [(ngModel)]="locker.description" placeholder="description"/>
@@ -17,7 +17,7 @@ import { Locker } from './locker';
     </div>
   `
 })
-export class LockerDetailtComponent{
+export class LockerDetailComponent{
   @Input()
   locker: Locker;
 }

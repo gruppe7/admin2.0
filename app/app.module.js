@@ -10,8 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var events_component_1 = require('./events/events.component');
+var locker_component_1 = require('./locker/locker.component');
 var locker_detail_component_1 = require('./locker/locker-detail.component');
 var AppModule = (function () {
     function AppModule() {
@@ -20,11 +22,12 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                FormsModule
+                forms_1.FormsModule
             ],
             declarations: [
                 app_component_1.AppComponent,
                 events_component_1.EventsComponent,
+                locker_component_1.LockerComponent,
                 locker_detail_component_1.LockerDetailComponent
             ],
             bootstrap: [app_component_1.AppComponent]

@@ -1,4 +1,3 @@
-// Author@Henrik Bjørkheim
 
 import { Locker } from './locker';
 export const LOCKERS: Locker[] = [
