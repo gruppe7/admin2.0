@@ -28,7 +28,7 @@ var LockerComponent = (function () {
     LockerComponent = __decorate([
         core_1.Component({
             selector: 'lockers',
-            template: "\n    <h1>Velkommen til Admin2.0</h1>\n    <locker-detail></locker-detail>\n  ",
+            template: "\n    <h3>Skapoversikt</h3>\n    <ul class=\"skap\">\n      <li *ngFor=\"let locker of lockers\" [class.selected]=\"locker===selectedLocker\" (click)=\"onselect(locker)\" >\n        <span class=\"badge\"> Skapnummer: {{locker.id}}   </span> Etasje: {{locker.floor}}\n      </li>\n    </ul>\n    <locker-detail></locker-detail>\n  ",
             providers: [locker_service_1.LockerService]
         }), 
         __metadata('design:paramtypes', [locker_service_1.LockerService])
