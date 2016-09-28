@@ -12,15 +12,21 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
 var events_component_1 = require('./events/events.component');
+var locker_detail_component_1 = require('./locker/locker-detail.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
+            imports: [
+                platform_browser_1.BrowserModule,
+                FormsModule
+            ],
             declarations: [
                 app_component_1.AppComponent,
-                events_component_1.EventsComponent],
+                events_component_1.EventsComponent,
+                locker_detail_component_1.LockerDetailComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

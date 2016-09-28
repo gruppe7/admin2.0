@@ -16,7 +16,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>Velkommen til Admin2.0</h1>\n    <events><events>\n  ",
+            template: "\n    <h1>Velkommen til Admin2.0</h1>\n    <events></events>\n    <locker-detail></locker-detail>\n  ",
             providers: [event_service_1.EventService]
         }), 
         __metadata('design:paramtypes', [])
