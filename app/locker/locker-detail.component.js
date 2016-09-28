@@ -1,3 +1,4 @@
+// Author@Henrik Bjørkheim
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,21 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var event_service_1 = require('./events/event.service');
-var locker_service_1 = require('./locker/locker.service');
-var AppComponent = (function () {
-    function AppComponent() {
+var locker_1 = require('./locker');
+var LockerDetailComponent = (function () {
+    function LockerDetailComponent() {
     }
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', locker_1.Locker)
+    ], LockerDetailComponent.prototype, "locker", void 0);
+    LockerDetailComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n    <h1>Velkommen til Admin2.0</h1>\n    <events></events>\n    <lockers></lockers>\n  ",
-            providers: [event_service_1.EventService,
-                locker_service_1.LockerService]
+            selector: 'locker-detail',
+            template: "\n    <div *ngIf=\"locker\">\n      <h2>{{locker.description}} details!</h2>\n      <div><label>id: </label>{{locker.id}}</div>\n      <div>\n        <label>description: </label>\n        <input [(ngModel)]=\"locker.description\" placeholder=\"description\"/>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], LockerDetailComponent);
+    return LockerDetailComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.LockerDetailComponent = LockerDetailComponent;
+//# sourceMappingURL=locker-detail.component.js.map

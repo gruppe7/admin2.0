@@ -1,3 +1,4 @@
+// Author@Henrik Bjørkheim
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,21 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var event_service_1 = require('./events/event.service');
-var locker_service_1 = require('./locker/locker.service');
-var AppComponent = (function () {
-    function AppComponent() {
+var mock_lockers_1 = require('./mock-lockers');
+var LockerService = (function () {
+    function LockerService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n    <h1>Velkommen til Admin2.0</h1>\n    <events></events>\n    <lockers></lockers>\n  ",
-            providers: [event_service_1.EventService,
-                locker_service_1.LockerService]
-        }), 
+    LockerService.prototype.getLockers = function () {
+        return Promise.resolve(mock_lockers_1.LOCKERS);
+    };
+    LockerService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], LockerService);
+    return LockerService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.LockerService = LockerService;
+//# sourceMappingURL=locker.service.js.map
