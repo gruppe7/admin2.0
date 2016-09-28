@@ -11,7 +11,7 @@ import { Locker } from './locker';
       <h2>{{locker.description}} details!</h2>
       <div><label>id: </label>{{locker.id}}</div>
       <div>
-        <label>description: </label>
+        <label>floor: </label>
         <input [(ngModel)]="locker.description" placeholder="description"/>
       </div>
     </div>

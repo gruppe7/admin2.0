@@ -1,5 +1,5 @@
 "use strict";
 exports.LOCKERS = [
-    { id: 101, description: '1 etg' }
+    { id: 101, floor: 1 }
 ];
 //# sourceMappingURL=mock-lockers.js.map

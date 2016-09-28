@@ -3,5 +3,5 @@
 
 export class Locker {
   id: number;
-  description: string;
+  floor: number;
 }
