@@ -6,11 +6,13 @@ import { AppComponent }   from './app.component';
 import { EventsComponent } from './events/events.component';
 import { LockerComponent } from './locker/locker.component';
 import { LockerDetailComponent } from './locker/locker-detail.component';
+import { routing } from './app.routing';
 
 @NgModule({
-  imports:      [
+  imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    routing
   ],
   declarations: [
     AppComponent,

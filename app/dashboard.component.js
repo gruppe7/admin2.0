@@ -8,22 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+//author: Elias Sundby Aukan
 var core_1 = require('@angular/core');
-var event_service_1 = require('./events/event.service');
-var locker_service_1 = require('./locker/locker.service');
-var AppComponent = (function () {
-    function AppComponent() {
+var DashboardComponent = (function () {
+    function DashboardComponent() {
     }
-    AppComponent = __decorate([
+    DashboardComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n    <h1>Velkommen til Admin2.0</h1>\n    <a routerLink=\"/events\">Events</a>\n    <a routerLink=\"/lockers\">Skap</a>\n    <router-outlet></router-outlet>\n  ",
-            providers: [event_service_1.EventService,
-                locker_service_1.LockerService]
+            selector: 'dashboard',
+            template: "\n    <h3>Meny</h3>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], DashboardComponent);
+    return DashboardComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.DashboardComponent = DashboardComponent;
+//# sourceMappingURL=dashboard.component.js.map
