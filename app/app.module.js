@@ -16,6 +16,7 @@ var events_component_1 = require('./events/events.component');
 var locker_component_1 = require('./locker/locker.component');
 var locker_detail_component_1 = require('./locker/locker-detail.component');
 var app_routing_1 = require('./app.routing');
+var dashboard_component_1 = require('./dashboard/dashboard.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,7 +31,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 events_component_1.EventsComponent,
                 locker_component_1.LockerComponent,
-                locker_detail_component_1.LockerDetailComponent
+                locker_detail_component_1.LockerDetailComponent,
+                dashboard_component_1.DashboardComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

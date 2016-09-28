@@ -11,7 +11,12 @@ import { Locker } from './locker';
 @Component({
   selector: 'lockers',
   template: `
-    <h1>Velkommen til Admin2.0</h1>
+    <h3>Skapoversikt</h3>
+    <ul class="skap">
+      <li *ngFor="let locker of lockers" [class.selected]="locker===selectedLocker" (click)="onselect(locker)" >
+        <span class="badge"> Skapnummer: {{locker.id}}   </span> Etasje: {{locker.floor}}
+      </li>
+    </ul>
     <locker-detail></locker-detail>
   `,
   providers: [LockerService]

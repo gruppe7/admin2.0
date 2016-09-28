@@ -8,7 +8,7 @@ import { Event } from './event';
  @Component({
    selector: 'events',
    template: `
-    <h2>Kommende eventer: </h2>
+    <h3>Kommende eventer: </h3>
     <ul class="eventer">
     <li *ngFor="let event of events" [class.selected]="event===selectedEvent" (click)="onSelect(event)">
       <span class="badge"> {{event.eventId}}   </span>{{event.name}}

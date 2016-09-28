@@ -1,3 +1,8 @@
+/*
+**  Author: Elias Dunby Aukan, Henrik Bjørkheim.
+**  This class is the main component. This is where we display the component given by the router.
+**
+*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -13,11 +18,12 @@ var event_service_1 = require('./events/event.service');
 var locker_service_1 = require('./locker/locker.service');
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'admin2.0';
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>Velkommen til Admin2.0</h1>\n    <a routerLink=\"/events\">Events</a>\n    <a routerLink=\"/lockers\">Skap</a>\n    <router-outlet></router-outlet>\n  ",
+            template: "\n    <h1 class=\"header\">{{title}}</h1>\n    <div>\n    <nav>\n      <a routerLink=\"/dashboard\">Hjem</a>\n      <a routerLink=\"/events\">Events</a>\n      <a routerLink=\"/lockers\">Skap</a>\n    </nav>\n    </div>\n    <router-outlet></router-outlet>\n\n  ",
             providers: [event_service_1.EventService,
                 locker_service_1.LockerService]
         }), 
