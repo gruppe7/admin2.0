@@ -8,7 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-//author: Elias Sundby Aukan
+/*
+**  author: Elias Sundby Aukan
+**  This class is the dashboard, or the home screen if you like.
+*/
 var core_1 = require('@angular/core');
 var DashboardComponent = (function () {
     function DashboardComponent() {
@@ -16,7 +19,7 @@ var DashboardComponent = (function () {
     DashboardComponent = __decorate([
         core_1.Component({
             selector: 'dashboard',
-            template: "\n    <h3>Meny</h3>\n  "
+            templateUrl: 'app/dashboard/dashboard.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], DashboardComponent);

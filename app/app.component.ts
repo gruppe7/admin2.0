@@ -9,13 +9,18 @@ import { LockerService } from './locker/locker.service';
 @Component({
   selector: 'my-app',
   template: `
-    <h1>Velkommen til Admin2.0</h1>
-    <a routerLink="/events">Events</a>
-    <a routerLink="/lockers">Skap</a>
+    <h1>{{title}}</h1>
+    <nav>
+      <a routerLink="/dashboard">Hjem</a>
+      <a routerLink="/events">Events</a>
+      <a routerLink="/lockers">Skap</a>
+    </nav>
     <router-outlet></router-outlet>
+
   `,
   providers: [EventService,
               LockerService]
 })
 export class AppComponent {
+  title = 'admin2.0';
 }

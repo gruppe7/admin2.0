@@ -13,11 +13,12 @@ var event_service_1 = require('./events/event.service');
 var locker_service_1 = require('./locker/locker.service');
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'admin2.0';
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>Velkommen til Admin2.0</h1>\n    <a routerLink=\"/events\">Events</a>\n    <a routerLink=\"/lockers\">Skap</a>\n    <router-outlet></router-outlet>\n  ",
+            template: "\n    <h1>{{title}}</h1>\n    <nav>\n      <a routerLink=\"/dashboard\">Hjem</a>\n      <a routerLink=\"/events\">Events</a>\n      <a routerLink=\"/lockers\">Skap</a>\n    </nav>\n    <router-outlet></router-outlet>\n\n  ",
             providers: [event_service_1.EventService,
                 locker_service_1.LockerService]
         }), 

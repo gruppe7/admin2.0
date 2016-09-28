@@ -7,6 +7,7 @@ import { EventsComponent } from './events/events.component';
 import { LockerComponent } from './locker/locker.component';
 import { LockerDetailComponent } from './locker/locker-detail.component';
 import { routing } from './app.routing';
+import { DashboardComponent } from './dashboard/dashboard.component'
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { routing } from './app.routing';
     AppComponent,
     EventsComponent,
     LockerComponent,
-    LockerDetailComponent
+    LockerDetailComponent,
+    DashboardComponent
   ],
   bootstrap:    [ AppComponent ]
 })
