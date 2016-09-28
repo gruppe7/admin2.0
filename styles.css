@@ -1,12 +1,19 @@
 /* Master Styles */
 
-.header{
+#header{
   color: white;
-  padding: 30px;
   background-color: #404040;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+  padding: 30px;
+  width: 100%;
+}
+#header h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+}
 
+#content{
+  margin-left: 30px;
 }
 
 h1 {
@@ -14,17 +21,48 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
+h2{
+  font-size: 40px;
+}
+h3{
+  font-size: 35px;
+}
 h2, h3 {
   color: #404040;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
 body {
-  margin: 2em;
+
 }
 body, input[text], button {
-  color: rgba(0,0,0,0.5);;
+  color: rgba(0,0,0,0.5);
   font-family: Cambria, Georgia;
+}
+
+#under{
+  background-color: rgba(0,0,0,0.3);
+  padding: 30px;
+  width: 50%;
+}
+
+#under h2, h3{
+  color: #404040;
+
+}
+
+
+ul{
+  font-size: 30px;
+  list-style-type: none;
+  font-style: italic;
+}
+ul span{
+  font-style: normal;
+}
+li:hover{
+  cursor: pointer;
+  color: #404040;
 }
 
 nav a {

@@ -14,7 +14,7 @@ import { Event } from './event';
       <span class="badge"> {{event.eventId}}   </span>{{event.name}}
     </li>
     </ul>
-    <div *ngIf="selectedEvent">
+    <div id ="under" *ngIf="selectedEvent">
       <h2> {{selectedEvent.name}}   </h2>
       <h3> {{selectedEvent.description}}</h3>
     </div>
