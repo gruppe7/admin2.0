@@ -10,8 +10,9 @@ import { LockerService } from './locker/locker.service';
   selector: 'my-app',
   template: `
     <h1>Velkommen til Admin2.0</h1>
-    <events></events>
-    <lockers></lockers>
+    <a routerLink="/events">Events</a>
+    <a routerLink="/lockers">Skap</a>
+    <router-outlet></router-outlet>
   `,
   providers: [EventService,
               LockerService]

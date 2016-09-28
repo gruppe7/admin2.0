@@ -15,6 +15,7 @@ var app_component_1 = require('./app.component');
 var events_component_1 = require('./events/events.component');
 var locker_component_1 = require('./locker/locker.component');
 var locker_detail_component_1 = require('./locker/locker-detail.component');
+var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,7 +23,8 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                app_routing_1.routing
             ],
             declarations: [
                 app_component_1.AppComponent,
