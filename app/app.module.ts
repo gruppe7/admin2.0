@@ -2,13 +2,20 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }   from './app.component';
-import { EventsComponent } from './events/events.component'
+import { EventsComponent } from './events/events.component';
+
+import { LockerDetailComponent } from './locker/locker-detail.component';
 
 @NgModule({
-  imports:      [ BrowserModule ],
+  imports:      [
+    BrowserModule,
+    FormsModule
+  ],
   declarations: [
     AppComponent,
-    EventsComponent],
+    EventsComponent,
+    LockerDetailComponent
+  ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
