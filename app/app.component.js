@@ -16,6 +16,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var event_service_1 = require('./events/event.service');
 var locker_service_1 = require('./locker/locker.service');
+var login_service_1 = require('./login/login.service');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'ADMIN 2.0';
@@ -24,8 +25,11 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             template: "\n    <div id=\"header\">\n      <h1>{{title}}</h1>\n\n\n    <nav>\n      <a routerLink=\"/dashboard\">Hjem</a>\n      <a routerLink=\"/events\">Events</a>\n      <a routerLink=\"/lockers\">Skap</a>\n      <a routerLink=\"/login\"> Logg inn </a>\n    </nav>\n    </div>\n    <div id=\"content\">\n    <router-outlet></router-outlet>\n    </div>\n\n  ",
-            providers: [event_service_1.EventService,
-                locker_service_1.LockerService]
+            providers: [
+                event_service_1.EventService,
+                locker_service_1.LockerService,
+                login_service_1.LoginService
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
