@@ -23,6 +23,7 @@ import { LockerService } from './locker/locker.service';
       <a routerLink="/dashboard">Hjem</a>
       <a routerLink="/events">Events</a>
       <a routerLink="/lockers">Skap</a>
+      <a routerLink="/login"> Logg inn </a>
     </nav>
     </div>
     <div id="content">

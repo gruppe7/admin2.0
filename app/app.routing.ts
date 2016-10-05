@@ -9,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EventsComponent } from './events/events.component';
 import { LockerComponent } from './locker/locker.component'
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component'
 
 
 /*
@@ -28,9 +29,13 @@ const appRoutes: Routes = [
     component: DashboardComponent
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: '',
     redirectTo: 'dashboard',
-    pathMatch: 'full',
+    pathMatch: 'full'
   }
 ];
 
