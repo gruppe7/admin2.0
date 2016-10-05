@@ -10,6 +10,7 @@ import { EventService } from './events/event.service';
 
 import { LockerService } from './locker/locker.service';
 
+import { LoginService } from './login/login.service';
 
 
 @Component({
@@ -31,8 +32,11 @@ import { LockerService } from './locker/locker.service';
     </div>
 
   `,
-  providers: [EventService,
-              LockerService]
+  providers: [
+    EventService,
+    LockerService,
+    LoginService
+            ]
 })
 export class AppComponent {
   title = 'ADMIN 2.0';

@@ -12,15 +12,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var login_service_1 = require('./login.service');
 var LoginComponent = (function () {
-    function LoginComponent() {
+    function LoginComponent(loginService) {
+        this.loginService = loginService;
+        this.login = false;
     }
+    LoginComponent.prototype.checkLogin = function () {
+        this.login = this.loginService.checkLoginTest(this.username, this.password);
+    };
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'login',
-            template: "\n    <div id=login>\n      <form>\n        <p>Brukernavn</p>\n        <input type=\"text\"><br>\n        <p>Passord:</p>\n        <input type=\"password\"> <br>\n        <input type=\"submit\" value=\"Logg inn\">\n      </form>\n    </div>\n      "
+            template: "\n    <div id=login>\n\n        <p>Brukernavn</p>\n        <input [(ngModel)]=\"this.username\" type=\"text\" id=\"username\" name=\"username\"><br>\n        <p>Passord:</p>\n        <input [(ngModel)]=\"this.password\" type=\"password\" id=\"password\" name=\"password\"> <br>\n        <button (click)=\"checkLogin()\" type=\"submit\">Logg inn</button>\n\n    </div>\n    <div *ngIf=\"login\">Logget inn</div>\n    <div *ngIf=\"!login\">Ikke logget inn</div>\n      "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [login_service_1.LoginService])
     ], LoginComponent);
     return LoginComponent;
 }());
