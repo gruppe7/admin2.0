@@ -14,9 +14,14 @@ var event_service_1 = require('./event.service');
 var EventsComponent = (function () {
     function EventsComponent(eventService) {
         this.eventService = eventService;
+        this.selectAttend = false;
     }
+    EventsComponent.prototype.onAttend = function () {
+        this.selectAttend = true;
+    };
     EventsComponent.prototype.onSelect = function (event) {
         this.selectedEvent = event;
+        this.selectAttend = false;
     };
     EventsComponent.prototype.ngOnInit = function () {
         this.getEvents();
@@ -28,7 +33,7 @@ var EventsComponent = (function () {
     EventsComponent = __decorate([
         core_1.Component({
             selector: 'events',
-            template: "\n    <h3>Kommende eventer: </h3>\n    <ul class=\"eventer\">\n    <li *ngFor=\"let event of events\" [class.selected]=\"event===selectedEvent\" (click)=\"onSelect(event)\">\n      <span class=\"badge\"> {{event.eventId}}   </span>{{event.name}}\n    </li>\n    </ul>\n    <div id =\"under\" *ngIf=\"selectedEvent\">\n      <h2> {{selectedEvent.name}}   </h2>\n      <h3> {{selectedEvent.description}}</h3>\n    </div>\n    "
+            template: "\n    <h3>Kommende eventer: </h3>\n    <ul class=\"eventer\">\n    <li *ngFor=\"let event of events\" [class.selected]=\"event===selectedEvent\" (click)=\"onSelect(event)\">\n      <span class=\"badge\"> {{event.eventId}}   </span>{{event.name}}\n    </li>\n    </ul>\n    <div id =\"under\" *ngIf=\"selectedEvent\">\n      <h2> {{selectedEvent.name}}   </h2>\n      <h3> {{selectedEvent.description}}</h3>\n      <ul><li id=\"link\" (click)=\"onAttend()\"> p\u00E5melding </li></ul>\n\n      <div id=\"attend\" *ngIf=\"selectAttend\">\n      <event-attend></event-attend>\n\n    </div>\n    "
         }), 
         __metadata('design:paramtypes', [event_service_1.EventService])
     ], EventsComponent);
