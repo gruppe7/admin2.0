@@ -1,3 +1,7 @@
+/*
+**  Author: Elias Sundby Aukan
+**  This component lets a student register to an event.
+*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -8,21 +12,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/*  Author: Elias Sundby Aukan
-**  not yet deployed
-*/
 var core_1 = require('@angular/core');
-var EventDetailsComponent = (function () {
-    function EventDetailsComponent() {
+var EventAttendComponent = (function () {
+    function EventAttendComponent() {
     }
-    EventDetailsComponent = __decorate([
+    ;
+    EventAttendComponent.prototype.sendEmail = function () {
+    };
+    EventAttendComponent = __decorate([
         core_1.Component({
-            selector: 'event-details',
-            template: "\n    <div *ngIf=\"event\">\n      <h2>{{hero.name}} Detaljer! </h2>\n      <div><label>Navn: </label> {{event.name}}</div>\n      <div>\n        <label>Beskrivelse:</label> {{event.description}}\n      </div>\n    </div>\n  "
+            selector: 'event-attend',
+            template: "\n    <div id=\"epost\">\n    <form id=\"epost-form\" ng-submit=\"sendEmail()\">\n      <input type=\"email\" name=\"epost\">\n      <input type=\"submit\" value=\"Send Epost\">\n      <div id=\"info\">Fyll inn epost-adressen din, s\u00E5 sender vi deg en mail med en instruksjoner! </div>\n    </form>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], EventDetailsComponent);
-    return EventDetailsComponent;
+    ], EventAttendComponent);
+    return EventAttendComponent;
 }());
-exports.EventDetailsComponent = EventDetailsComponent;
-//# sourceMappingURL=event-details.component.js.map
+exports.EventAttendComponent = EventAttendComponent;
+//# sourceMappingURL=event-attend.component.js.map
