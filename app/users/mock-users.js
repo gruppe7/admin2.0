@@ -4,7 +4,7 @@
 */
 "use strict";
 exports.USERS = [
-    { username: 'eliassa', password: 'pw' },
-    { username: 'gunnarkd', password: 'pw' }
+    { username: 'eliassa', password: 'pw', employee: true, eventmanager: true },
+    { username: 'gunnarkd', password: 'pw', employee: true, eventmanager: true }
 ];
 //# sourceMappingURL=mock-users.js.map

@@ -12,14 +12,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 **  Author: Elias Sundby Aukan
 */
 var core_1 = require('@angular/core');
-var mock_users_1 = require('../users/mock-users');
-var LoginService = (function () {
-    function LoginService() {
+var mock_users_1 = require('./mock-users');
+var UsersService = (function () {
+    function UsersService() {
     }
-    LoginService.prototype.getUsers = function () {
+    UsersService.prototype.getUsers = function () {
         return Promise.resolve(mock_users_1.USERS);
     };
-    LoginService.prototype.checkLoginTest = function (username, password) {
+    UsersService.prototype.checkLoginTest = function (username, password) {
         for (var _i = 0, USERS_1 = mock_users_1.USERS; _i < USERS_1.length; _i++) {
             var User_1 = USERS_1[_i];
             if (User_1.username === username && User_1.password === password) {
@@ -28,11 +28,11 @@ var LoginService = (function () {
         }
         return false;
     };
-    LoginService = __decorate([
+    UsersService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], LoginService);
-    return LoginService;
+    ], UsersService);
+    return UsersService;
 }());
-exports.LoginService = LoginService;
-//# sourceMappingURL=login.service.js.map
+exports.UsersService = UsersService;
+//# sourceMappingURL=users.service.js.map

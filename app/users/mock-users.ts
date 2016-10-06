@@ -6,6 +6,6 @@
 import { User } from './user';
 
 export const USERS: User[] = [
-  {username: 'eliassa', password: 'pw'},
-  {username: 'gunnarkd', password: 'pw'}
+  {username: 'eliassa', password: 'pw', employee: true, eventmanager: true},
+  {username: 'gunnarkd', password: 'pw', employee: true, eventmanager: true}
 ]

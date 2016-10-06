@@ -3,7 +3,7 @@
 */
 
 import { Component } from '@angular/core';
-import { LoginService } from './login.service';
+import { UsersService } from '../users/users.service';
 
 @Component({
   selector: 'login',
@@ -17,7 +17,7 @@ import { LoginService } from './login.service';
         <button (click)="checkLogin()" type="submit">Logg inn</button>
 
     </div>
-    <div *ngIf="login">Logget inn</div>
+    <div *ngIf="login">Logget inn som {{username}}</div>
     <div *ngIf="!login">Ikke logget inn</div>
       `
 })
@@ -25,9 +25,9 @@ export class LoginComponent{
   username: string;
   password: string;
   login = false;
-  constructor(private loginService: LoginService){}
+  constructor(private usersService: UsersService){}
 
   checkLogin(): void{
-    this.login = this.loginService.checkLoginTest(this.username, this.password);
+    this.login = this.usersService.checkLoginTest(this.username, this.password);
   }
 }

@@ -3,11 +3,11 @@
 */
 import { Injectable } from '@angular/core';
 
-import { User } from '../users/user';
-import { USERS } from '../users/mock-users';
+import { User } from './user';
+import { USERS } from './mock-users';
 
 @Injectable()
-export class LoginService{
+export class UsersService{
   getUsers(): Promise<User[]>{
     return Promise.resolve(USERS)
   }
