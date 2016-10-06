@@ -12,21 +12,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var login_service_1 = require('./login.service');
+var users_service_1 = require('../users/users.service');
 var LoginComponent = (function () {
-    function LoginComponent(loginService) {
-        this.loginService = loginService;
+    function LoginComponent(usersService) {
+        this.usersService = usersService;
         this.login = false;
     }
     LoginComponent.prototype.checkLogin = function () {
-        this.login = this.loginService.checkLoginTest(this.username, this.password);
+        this.login = this.usersService.checkLoginTest(this.username, this.password);
     };
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'login',
-            template: "\n    <div id=login>\n\n        <p>Brukernavn</p>\n        <input [(ngModel)]=\"this.username\" type=\"text\" id=\"username\" name=\"username\"><br>\n        <p>Passord:</p>\n        <input [(ngModel)]=\"this.password\" type=\"password\" id=\"password\" name=\"password\"> <br>\n        <button (click)=\"checkLogin()\" type=\"submit\">Logg inn</button>\n\n    </div>\n    <div *ngIf=\"login\">Logget inn</div>\n    <div *ngIf=\"!login\">Ikke logget inn</div>\n      "
+            template: "\n    <div id=login>\n\n        <p>Brukernavn</p>\n        <input [(ngModel)]=\"this.username\" type=\"text\" id=\"username\" name=\"username\"><br>\n        <p>Passord:</p>\n        <input [(ngModel)]=\"this.password\" type=\"password\" id=\"password\" name=\"password\"> <br>\n        <button (click)=\"checkLogin()\" type=\"submit\">Logg inn</button>\n\n    </div>\n    <div *ngIf=\"login\">Logget inn som {{username}}</div>\n    <div *ngIf=\"!login\">Ikke logget inn</div>\n      "
         }), 
-        __metadata('design:paramtypes', [login_service_1.LoginService])
+        __metadata('design:paramtypes', [users_service_1.UsersService])
     ], LoginComponent);
     return LoginComponent;
 }());
