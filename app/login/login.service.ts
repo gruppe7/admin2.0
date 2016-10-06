@@ -3,8 +3,8 @@
 */
 import { Injectable } from '@angular/core';
 
-import { User } from './user';
-import { USERS } from './mock-users';
+import { User } from '../users/user';
+import { USERS } from '../users/mock-users';
 
 @Injectable()
 export class LoginService{

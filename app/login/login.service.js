@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 **  Author: Elias Sundby Aukan
 */
 var core_1 = require('@angular/core');
-var mock_users_1 = require('./mock-users');
+var mock_users_1 = require('../users/mock-users');
 var LoginService = (function () {
     function LoginService() {
     }
