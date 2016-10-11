@@ -1,13 +1,13 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
+
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-=======
+
 import { JsonpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
->>>>>>> 51ba8e84193d4f5b5cdecec808e14b3c283cd605
+
 
 import { AppComponent }   from './app.component';
 import { routing } from './app.routing';
