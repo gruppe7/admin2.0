@@ -16,18 +16,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var event_service_1 = require('./events/event.service');
 var locker_service_1 = require('./locker/locker.service');
+var users_service_1 = require('./users/users.service');
+var user_1 = require('./users/user');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(loginUser) {
+        this.loginUser = loginUser;
+        this.employee = false;
+        this.eventmanager = false;
         this.title = 'ADMIN 2.0';
+        this.employee = loginUser.employee;
+        this.eventmanager = loginUser.eventmanager;
+        this.username = loginUser.username;
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <div id=\"header\">\n      <h1>{{title}}</h1>\n\n\n    <nav>\n      <a routerLink=\"/dashboard\">Hjem</a>\n      <a routerLink=\"/events\">Events</a>\n      <a routerLink=\"/lockers\">Skap</a>\n    </nav>\n    </div>\n    <div id=\"content\">\n    <router-outlet></router-outlet>\n    </div>\n\n  ",
-            providers: [event_service_1.EventService,
-                locker_service_1.LockerService]
+            template: "\n    <div id=\"header\">\n      <h1>{{title}}</h1>\n\n\n    <nav>\n      <a routerLink=\"/dashboard\">Hjem</a>\n      <a routerLink=\"/events\">Events</a>\n      <a routerLink=\"/lockers\">Skap</a>\n      <a routerLink=\"/login\"> Logg inn </a>\n      <div *ngIf=\"employee || eventmanager\">{{username}}</div>\n    </nav>\n    </div>\n    <div id=\"content\">\n    <router-outlet></router-outlet>\n    </div>\n\n  ",
+            providers: [
+                event_service_1.EventService,
+                locker_service_1.LockerService,
+                users_service_1.UsersService,
+                user_1.User
+            ]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [user_1.User])
     ], AppComponent);
     return AppComponent;
 }());

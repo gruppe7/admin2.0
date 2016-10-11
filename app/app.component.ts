@@ -10,6 +10,9 @@ import { EventService } from './events/event.service';
 
 import { LockerService } from './locker/locker.service';
 
+import { UsersService } from './users/users.service';
+import { LoginComponent } from './login/login.component';
+import { User } from './users/user';
 
 
 @Component({
@@ -23,6 +26,8 @@ import { LockerService } from './locker/locker.service';
       <a routerLink="/dashboard">Hjem</a>
       <a routerLink="/events">Events</a>
       <a routerLink="/lockers">Skap</a>
+      <a routerLink="/login"> Logg inn </a>
+      <div *ngIf="employee || eventmanager">{{username}}</div>
     </nav>
     </div>
     <div id="content">
@@ -30,9 +35,25 @@ import { LockerService } from './locker/locker.service';
     </div>
 
   `,
-  providers: [EventService,
-              LockerService]
+  providers: [
+    EventService,
+    LockerService,
+    UsersService,
+    User
+            ]
 })
 export class AppComponent {
+  employee = false;
+  eventmanager = false;
+  username: string;
   title = 'ADMIN 2.0';
+
+  constructor(private loginUser: User){
+    this.employee = loginUser.employee;
+    this.eventmanager = loginUser.eventmanager;
+    this.username = loginUser.username;
+  }
+
+
+
 }

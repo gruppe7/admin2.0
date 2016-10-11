@@ -14,12 +14,13 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var forms_2 = require('@angular/forms');
 var app_component_1 = require('./app.component');
+var app_routing_1 = require('./app.routing');
+var dashboard_component_1 = require('./dashboard/dashboard.component');
 var events_component_1 = require('./events/events.component');
 var event_attend_component_1 = require('./events/event-attend.component');
 var locker_component_1 = require('./locker/locker.component');
 var locker_detail_component_1 = require('./locker/locker-detail.component');
-var app_routing_1 = require('./app.routing');
-var dashboard_component_1 = require('./dashboard/dashboard.component');
+var login_component_1 = require('./login/login.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,7 +39,8 @@ var AppModule = (function () {
                 event_attend_component_1.EventAttendComponent,
                 locker_component_1.LockerComponent,
                 locker_detail_component_1.LockerDetailComponent,
-                dashboard_component_1.DashboardComponent
+                dashboard_component_1.DashboardComponent,
+                login_component_1.LoginComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

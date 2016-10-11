@@ -7,6 +7,7 @@ var router_1 = require('@angular/router');
 var events_component_1 = require('./events/events.component');
 var locker_component_1 = require('./locker/locker.component');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
+var login_component_1 = require('./login/login.component');
 /*
 **  appRoutes declares the paths with content
 */
@@ -24,9 +25,13 @@ var appRoutes = [
         component: dashboard_component_1.DashboardComponent
     },
     {
+        path: 'login',
+        component: login_component_1.LoginComponent
+    },
+    {
         path: '',
         redirectTo: 'dashboard',
-        pathMatch: 'full',
+        pathMatch: 'full'
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
