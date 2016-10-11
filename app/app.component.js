@@ -18,6 +18,8 @@ var event_service_1 = require('./events/event.service');
 var locker_service_1 = require('./locker/locker.service');
 var users_service_1 = require('./users/users.service');
 var user_1 = require('./users/user');
+var user_service_1 = require('./login/user.service');
+var login_guard_1 = require('./login/login.guard');
 var AppComponent = (function () {
     function AppComponent(loginUser) {
         this.loginUser = loginUser;
@@ -36,6 +38,8 @@ var AppComponent = (function () {
                 event_service_1.EventService,
                 locker_service_1.LockerService,
                 users_service_1.UsersService,
+                user_service_1.UserService,
+                login_guard_1.LoggedInGuard,
                 user_1.User
             ]
         }), 

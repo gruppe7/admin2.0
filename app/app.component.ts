@@ -6,13 +6,18 @@
 
 import { Component } from '@angular/core';
 
+
 import { EventService } from './events/event.service';
 
 import { LockerService } from './locker/locker.service';
 
 import { UsersService } from './users/users.service';
-import { LoginComponent } from './login/login.component';
 import { User } from './users/user';
+
+import { LoginComponent } from './login/login.component';
+import { UserService } from './login/user.service';
+import { LoggedInGuard } from './login/login.guard';
+
 
 
 @Component({
@@ -39,6 +44,8 @@ import { User } from './users/user';
     EventService,
     LockerService,
     UsersService,
+    UserService,
+    LoggedInGuard,
     User
             ]
 })
