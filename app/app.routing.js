@@ -8,6 +8,8 @@ var events_component_1 = require('./events/events.component');
 var locker_component_1 = require('./locker/locker.component');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
 var login_component_1 = require('./login/login.component');
+var login_guard_1 = require('./login/login.guard');
+var profile_component_1 = require('./profile/profile.component');
 /*
 **  appRoutes declares the paths with content
 */
@@ -32,6 +34,11 @@ var appRoutes = [
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full'
+    },
+    {
+        path: 'profile',
+        component: profile_component_1.ProfileComponent,
+        canActivate: [login_guard_1.LoggedInGuard]
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

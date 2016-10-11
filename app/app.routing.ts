@@ -9,7 +9,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { EventsComponent } from './events/events.component';
 import { LockerComponent } from './locker/locker.component'
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component'
+
+import { LoginComponent } from './login/login.component';
+import { LoggedInGuard } from './login/login.guard';
+
+import { ProfileComponent } from './profile/profile.component';
+
 
 
 /*
@@ -36,6 +41,12 @@ const appRoutes: Routes = [
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full'
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [LoggedInGuard]
+
   }
 ];
 
