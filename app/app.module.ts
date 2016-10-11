@@ -1,6 +1,8 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { JsonpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent }   from './app.component';
 import { routing } from './app.routing';
@@ -18,7 +20,9 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    JsonpModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
