@@ -14,6 +14,12 @@ var locker_service_1 = require('./locker.service');
 var LockerComponent = (function () {
     function LockerComponent(lockerService) {
         this.lockerService = lockerService;
+        /*  this.term.valueChanges
+                    .debounceTime(400)
+                    .distinctUntilChanged()
+                    .switchMap(term => this.lockerService.search(term)
+                    .subscribe(items => this.items = items));
+                    */
     }
     LockerComponent.prototype.getLockers = function () {
         var _this = this;
@@ -25,10 +31,15 @@ var LockerComponent = (function () {
     LockerComponent.prototype.onSelect = function (locker) {
         this.selectedLocker = locker;
     };
+    LockerComponent.prototype.search = function () {
+        var _this = this;
+        this.lockerService.search(this.term).then(function (lockers) { return _this.lockers = lockers; });
+        //.then(items => this.items = items);
+    };
     LockerComponent = __decorate([
         core_1.Component({
             selector: 'lockers',
-            template: "\n    <h3>Skapoversikt</h3>\n    <ul class=\"skap\">\n      <li *ngFor=\"let locker of lockers\" [class.selected]=\"locker===selectedLocker\" (click)=\"onselect(locker)\" >\n        <span class=\"badge\"> Skapnummer: {{locker.id}}   </span> Etasje: {{locker.floor}}\n      </li>\n    </ul>\n    <locker-detail></locker-detail>\n  ",
+            template: "\n    <h3>Skapoversikt</h3>\n    <ul class=\"skap\">\n    <p>\n      <input type=\"text\" [(ngModel)]=\"term\"/>\n      <button type=\"submit\" (click)=\"search()\"> s\u00F8k </button>\n    </p>\n      <li *ngFor=\"let locker of lockers\" [class.selected]=\"locker===selectedLocker\" (click)=\"onselect(locker)\" >\n        <span class=\"badge\"> Skapnummer: {{locker.id}}   </span> Etasje: {{locker.floor}}\n      </li>\n    </ul>\n    <locker-detail></locker-detail>\n  ",
             providers: [locker_service_1.LockerService]
         }), 
         __metadata('design:paramtypes', [locker_service_1.LockerService])

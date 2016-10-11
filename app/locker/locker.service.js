@@ -12,10 +12,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var mock_lockers_1 = require('./mock-lockers');
 var LockerService = (function () {
+    //constructor(private jsonp: Jsonp) {}
     function LockerService() {
     }
     LockerService.prototype.getLockers = function () {
         return Promise.resolve(mock_lockers_1.LOCKERS);
+    };
+    LockerService.prototype.search = function (term) {
+        /*
+        var search = new URLSearchParams()
+        search.set('action', 'opensearch');
+        search.set('search', term);
+        search.set('format', 'json');
+        return this.jsonp
+                    .get('Her legger vi inn callback fra Gunnar', { search })
+                    .map((response) => response.json()[1]);
+        */
+        var foundLockers = [];
+        for (var _i = 0, LOCKERS_1 = mock_lockers_1.LOCKERS; _i < LOCKERS_1.length; _i++) {
+            var Locker_1 = LOCKERS_1[_i];
+            if (+term === Locker_1.id) {
+                foundLockers.push(Locker_1);
+            }
+            return Promise.resolve(foundLockers);
+        }
     };
     LockerService = __decorate([
         core_1.Injectable(), 

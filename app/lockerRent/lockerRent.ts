@@ -2,4 +2,5 @@
 
 export class LockerRent{
   lockerRentId: number;
+  semester: string;
 }
