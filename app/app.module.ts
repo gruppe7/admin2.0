@@ -28,9 +28,7 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserModule,
     FormsModule,
     routing,
-    HttpModule,
-    JsonpModule,
-    ReactiveFormsModule
+    HttpModule
   ],
   declarations: [
     AppComponent,
