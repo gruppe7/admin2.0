@@ -17,15 +17,6 @@ var ProfileService = (function () {
     function ProfileService(http) {
         this.http = http;
     }
-    ProfileService.prototype.getProfile = function () {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
-        var authToken = localStorage.getItem('auth_token');
-        headers.append('Authorization', "Bearer " + authToken);
-        return this.http
-            .get('/profile', { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
     ProfileService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
