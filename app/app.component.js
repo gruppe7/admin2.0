@@ -13,34 +13,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var event_service_1 = require("./events/event.service");
-var locker_service_1 = require("./locker/locker.service");
-var users_service_1 = require("./users/users.service");
-var user_1 = require("./users/user");
-var user_service_1 = require("./login/user.service");
-var login_guard_1 = require("./login/login.guard");
+var core_1 = require('@angular/core');
+var event_service_1 = require('./events/event.service');
+var locker_service_1 = require('./locker/locker.service');
+var users_service_1 = require('./users/users.service');
+var user_1 = require('./users/user');
+var user_service_1 = require('./login/user.service');
+var login_guard_1 = require('./login/login.guard');
 var AppComponent = (function () {
     function AppComponent(userService) {
         this.title = 'ADMIN 2.0';
         this.login = userService.isLoggedIn();
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            template: "\n    <div id=\"header\">\n      <h1>{{title}}</h1>\n\n\n    <nav>\n      <a routerLink=\"/dashboard\">Hjem</a>\n      <a routerLink=\"/events\">Events</a>\n      <a routerLink=\"/lockers\">Skap</a>\n      <a routerLink=\"/profile\">Profil</a>\n      <a *ngIf=\"!login\" routerLink=\"/login\">Logg inn</a>\n      <a *ngIf=\"login\" routerLink=\"/login\">Logg ut</a>\n    </nav>\n    </div>\n    <div id=\"content\">\n    <router-outlet></router-outlet>\n    </div>\n\n  ",
+            providers: [
+                event_service_1.EventService,
+                locker_service_1.LockerService,
+                users_service_1.UsersService,
+                user_service_1.UserService,
+                login_guard_1.LoggedInGuard,
+                user_1.User
+            ]
+        }), 
+        __metadata('design:paramtypes', [user_service_1.UserService])
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "\n    <div id=\"header\">\n      <h1>{{title}}</h1>\n\n\n    <nav>\n      <a routerLink=\"/dashboard\">Hjem</a>\n      <a routerLink=\"/events\">Events</a>\n      <a routerLink=\"/lockers\">Skap</a>\n      <a routerLink=\"/login\"> Logg inn </a>\n      <div *ngIf=\"login\">{{username}}</div>\n    </nav>\n    </div>\n    <div id=\"content\">\n    <router-outlet></router-outlet>\n    </div>\n\n  ",
-        providers: [
-            event_service_1.EventService,
-            locker_service_1.LockerService,
-            users_service_1.UsersService,
-            user_service_1.UserService,
-            login_guard_1.LoggedInGuard,
-            user_1.User
-        ]
-    }),
-    __metadata("design:paramtypes", [user_service_1.UserService])
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

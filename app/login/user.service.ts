@@ -60,11 +60,14 @@ export class UserService {
     this.token = undefined;
     localStorage.removeItem('auth_token');
 
-    return Observable.of(true);
+    return true;
   }
 
   isLoggedIn() {
-    return !!localStorage.getItem('auth_token')
+    if(this.token === localStorage.getItem('auth_token')){
+      return true;
+    }
+    return false;
   }
 
 }

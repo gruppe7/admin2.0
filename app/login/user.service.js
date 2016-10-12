@@ -13,7 +13,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 ** This service handles a single user login --> do not mistake this for user/users.service
 */
 var core_1 = require('@angular/core');
-var Observable_1 = require('rxjs/Observable');
 var mock_users_1 = require('../users/mock-users');
 var UserService = (function () {
     function UserService() {
@@ -56,10 +55,13 @@ var UserService = (function () {
     UserService.prototype.logout = function () {
         this.token = undefined;
         localStorage.removeItem('auth_token');
-        return Observable_1.Observable.of(true);
+        return true;
     };
     UserService.prototype.isLoggedIn = function () {
-        return !!localStorage.getItem('auth_token');
+        if (this.token === localStorage.getItem('auth_token')) {
+            return true;
+        }
+        return false;
     };
     UserService = __decorate([
         core_1.Injectable(), 

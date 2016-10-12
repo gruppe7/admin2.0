@@ -33,6 +33,7 @@ export class LoginComponent{
   onSubmit(): void{
     if(this.userService.login_mock(this.username, this.password)){
       this.login = true;
+      this.router.navigate(['']);
     }
 
 

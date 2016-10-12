@@ -31,8 +31,9 @@ import { LoggedInGuard } from './login/login.guard';
       <a routerLink="/dashboard">Hjem</a>
       <a routerLink="/events">Events</a>
       <a routerLink="/lockers">Skap</a>
-      <a routerLink="/login"> Logg inn </a>
-      <div *ngIf="login">{{username}}</div>
+      <a routerLink="/profile">Profil</a>
+      <a *ngIf="!login" routerLink="/login">Logg inn</a>
+      <a *ngIf="login" routerLink="/login">Logg ut</a>
     </nav>
     </div>
     <div id="content">
