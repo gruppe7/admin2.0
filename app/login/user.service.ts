@@ -14,7 +14,8 @@ export class UserService {
     this.loggedIn = !!localStorage.getItem('auth_token');
   }
 
-  login(username, password) {
+/*  login(username, password) {
+
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
@@ -33,27 +34,17 @@ export class UserService {
 
         return res.success;
       });
+
   }
+  */
 
   login_mock(username, password){
-    let headers = new Headers();
-    return this.http
-      .post(
-        '/login',
-        JSON.stringify({ username, password }),
-        { headers }
-      )
-      .map(res => res.json())
-      .map((res) => {
-        if (res.success) {
-          localStorage.setItem('auth_token', res.auth_token);
-          this.loggedIn = true;
-        }
-
-      return res.success;
-    });
-
-
+    for(let user of USERS){
+      if(user.username == username && user.password == password){
+        return true;
+      }
+    }
+    return false;
   }
 
 

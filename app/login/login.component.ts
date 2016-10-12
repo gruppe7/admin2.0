@@ -24,13 +24,12 @@ import { UserService } from './user.service';
       `
 })
 export class LoginComponent{
+  username: string;
+  password: string;
+  login = false;
   constructor(private userService: UserService, private router: Router){}
 
-  onSubmit(username, password): void{
-    this.userService.login(username, password).subscribe((result) => {
-      if (result){
-        this.router.navigate(['']);
-      }
-    });
+  onSubmit(): void{
+    this.login = this.userService.login_mock(this.username, this.password);
   }
 }

@@ -9,7 +9,7 @@ import { Http, Headers } from '@angular/http';
 export class ProfileService {
   constructor(private http: Http) {}
 
-  getProfile() {
+  /*getProfile() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     let authToken = localStorage.getItem('auth_token');
@@ -18,5 +18,5 @@ export class ProfileService {
     return this.http
       .get('/profile', { headers })
       .map(res => res.json());
-  }
+  }*/
 }
