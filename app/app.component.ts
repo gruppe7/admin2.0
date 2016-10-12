@@ -32,7 +32,7 @@ import { LoggedInGuard } from './login/login.guard';
       <a routerLink="/events">Events</a>
       <a routerLink="/lockers">Skap</a>
       <a routerLink="/login"> Logg inn </a>
-      <div *ngIf="employee || eventmanager">{{username}}</div>
+      <div *ngIf="login">{{username}}</div>
     </nav>
     </div>
     <div id="content">
@@ -50,15 +50,11 @@ import { LoggedInGuard } from './login/login.guard';
             ]
 })
 export class AppComponent {
-  employee = false;
-  eventmanager = false;
-  username: string;
   title = 'ADMIN 2.0';
+  login: boolean;
 
-  constructor(private loginUser: User){
-    this.employee = loginUser.employee;
-    this.eventmanager = loginUser.eventmanager;
-    this.username = loginUser.username;
+  constructor(userService: UserService){
+    this.login = userService.isLoggedIn();
   }
 
 

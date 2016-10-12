@@ -4,14 +4,17 @@
 */
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
+
+import { Observable } from 'rxjs/Observable';
+
 import { USERS } from '../users/mock-users';
 
 @Injectable()
 export class UserService {
-  private loggedIn = false;
+  private token: string;
 
-  constructor(private http: Http) {
-    this.loggedIn = !!localStorage.getItem('auth_token');
+  constructor() {
+    this.token = localStorage.getItem('auth_token');
   }
 
 /*  login(username, password) {
@@ -41,20 +44,27 @@ export class UserService {
   login_mock(username, password){
     for(let user of USERS){
       if(user.username == username && user.password == password){
+        this.token = 'token';
+        localStorage.setItem('auth_token', this.token);
         return true;
+
       }
     }
+
     return false;
   }
 
 
 
   logout() {
+    this.token = undefined;
     localStorage.removeItem('auth_token');
-    this.loggedIn = false;
+
+    return Observable.of(true);
   }
 
   isLoggedIn() {
-    return this.loggedIn;
+    return !!localStorage.getItem('auth_token')
   }
+
 }

@@ -13,13 +13,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 ** This service handles a single user login --> do not mistake this for user/users.service
 */
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
+var Observable_1 = require('rxjs/Observable');
 var mock_users_1 = require('../users/mock-users');
 var UserService = (function () {
-    function UserService(http) {
-        this.http = http;
-        this.loggedIn = false;
-        this.loggedIn = !!localStorage.getItem('auth_token');
+    function UserService() {
+        this.token = localStorage.getItem('auth_token');
     }
     /*  login(username, password) {
     
@@ -48,21 +46,24 @@ var UserService = (function () {
         for (var _i = 0, USERS_1 = mock_users_1.USERS; _i < USERS_1.length; _i++) {
             var user = USERS_1[_i];
             if (user.username == username && user.password == password) {
+                this.token = 'token';
+                localStorage.setItem('auth_token', this.token);
                 return true;
             }
         }
         return false;
     };
     UserService.prototype.logout = function () {
+        this.token = undefined;
         localStorage.removeItem('auth_token');
-        this.loggedIn = false;
+        return Observable_1.Observable.of(true);
     };
     UserService.prototype.isLoggedIn = function () {
-        return this.loggedIn;
+        return !!localStorage.getItem('auth_token');
     };
     UserService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [])
     ], UserService);
     return UserService;
 }());
