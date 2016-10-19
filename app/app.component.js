@@ -21,19 +21,14 @@ var user_1 = require('./users/user');
 var user_service_1 = require('./login/user.service');
 var login_guard_1 = require('./login/login.guard');
 var AppComponent = (function () {
-    function AppComponent(loginUser) {
-        this.loginUser = loginUser;
-        this.employee = false;
-        this.eventmanager = false;
+    function AppComponent(userService) {
         this.title = 'ADMIN 2.0';
-        this.employee = loginUser.employee;
-        this.eventmanager = loginUser.eventmanager;
-        this.username = loginUser.username;
+        this.login = userService.isLoggedIn();
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <div id=\"header\">\n      <h1>{{title}}</h1>\n\n\n    <nav>\n      <a routerLink=\"/dashboard\">Hjem</a>\n      <a routerLink=\"/events\">Events</a>\n      <a routerLink=\"/lockers\">Skap</a>\n      <a routerLink=\"/login\"> Logg inn </a>\n      <div *ngIf=\"employee || eventmanager\">{{username}}</div>\n    </nav>\n    </div>\n    <div id=\"content\">\n    <router-outlet></router-outlet>\n    </div>\n\n  ",
+            template: "\n    <div id=\"header\">\n      <h1>{{title}}</h1>\n\n\n    <nav>\n      <a routerLink=\"/dashboard\">Hjem</a>\n      <a routerLink=\"/events\">Events</a>\n      <a routerLink=\"/lockers\">Skap</a>\n      <a routerLink=\"/profile\">Profil</a>\n      <a *ngIf=\"!login\" routerLink=\"/login\">Logg inn</a>\n      <a *ngIf=\"login\" routerLink=\"/login\">Logg ut</a>\n    </nav>\n    </div>\n    <div id=\"content\">\n    <router-outlet></router-outlet>\n    </div>\n\n  ",
             providers: [
                 event_service_1.EventService,
                 locker_service_1.LockerService,
@@ -43,7 +38,7 @@ var AppComponent = (function () {
                 user_1.User
             ]
         }), 
-        __metadata('design:paramtypes', [user_1.User])
+        __metadata('design:paramtypes', [user_service_1.UserService])
     ], AppComponent);
     return AppComponent;
 }());

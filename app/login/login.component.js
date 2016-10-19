@@ -19,9 +19,13 @@ var LoginComponent = (function () {
         this.userService = userService;
         this.router = router;
         this.login = false;
+        this.error = false;
     }
     LoginComponent.prototype.onSubmit = function () {
-        this.login = this.userService.login_mock(this.username, this.password);
+        if (this.userService.login_mock(this.username, this.password)) {
+            this.login = true;
+            this.router.navigate(['']);
+        }
     };
     LoginComponent = __decorate([
         core_1.Component({

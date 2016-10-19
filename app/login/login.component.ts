@@ -27,9 +27,15 @@ export class LoginComponent{
   username: string;
   password: string;
   login = false;
+  error = false;
   constructor(private userService: UserService, private router: Router){}
 
   onSubmit(): void{
-    this.login = this.userService.login_mock(this.username, this.password);
+    if(this.userService.login_mock(this.username, this.password)){
+      this.login = true;
+      this.router.navigate(['']);
+    }
+
+
   }
 }
