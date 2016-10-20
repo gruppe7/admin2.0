@@ -1,5 +1,6 @@
 /*
 **  Author: Elias Sundby Aukan
+**  This class contains all the tests run with jasmine/karma
 */
 "use strict";
 var event_service_1 = require("./events/event.service");

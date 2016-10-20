@@ -1,5 +1,6 @@
 /*
 **  Author: Elias Sundby Aukan
+**  This class contains all the tests run with jasmine/karma
 */
 
 import { inject } from '@angular/core/testing';
@@ -46,7 +47,7 @@ describe('Testing LockerService', () => {
       done();
     });
   });
-  
+
 
   it('#search should return lockers matching the search term', done => {
     lockerService.search('101').then( lockers =>{
