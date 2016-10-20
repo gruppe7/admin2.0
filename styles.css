@@ -51,6 +51,15 @@ input[text], button {
   color: #404040;
 
 }
+#indicator {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 5px;
+    height: 5px;
+    color: red;
+    background-color: white;
+}
 
 .badge{
   color: #2fa4e7;
