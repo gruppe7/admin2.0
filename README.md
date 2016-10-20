@@ -1,6 +1,5 @@
 # admin2.0
-Authors: Henrik Bjørkheim, Gunnar Krutå Dalen, Elisabeth Storset,
-Andreas Bergman, Elias Sundby Aukan.
+Authors: Henrik Bjørkheim, Elias Sundby Aukan.
 
 ## install and run
 ```
