@@ -2,7 +2,7 @@
 **  Author: Elias Sundby Aukan
 */
 "use strict";
-var event_service_1 = require("./events/event.service");
+var event_service_1 = require('./events/event.service');
 describe('Testing EventService', function () {
     var service;
     beforeEach(function () { service = new event_service_1.EventService(); });
