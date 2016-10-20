@@ -12,6 +12,11 @@ export class EventService {
   }
 
   getEvent(eventId: number): Promise<Event> {
-    return this.getEvents().then(events => events.find(event => event.eventId === eventId));
+    for(let Event of EVENTS){
+      if(Event.eventId == eventId){
+        return Promise.resolve(Event);
+      }
+    }
+    return null;
   }
 }

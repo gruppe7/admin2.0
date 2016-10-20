@@ -9,8 +9,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var mock_events_1 = require('./mock-events');
+var core_1 = require("@angular/core");
+var mock_events_1 = require("./mock-events");
 var EventService = (function () {
     function EventService() {
     }
@@ -18,13 +18,19 @@ var EventService = (function () {
         return Promise.resolve(mock_events_1.EVENTS);
     };
     EventService.prototype.getEvent = function (eventId) {
-        return this.getEvents().then(function (events) { return events.find(function (event) { return event.eventId === eventId; }); });
+        for (var _i = 0, EVENTS_1 = mock_events_1.EVENTS; _i < EVENTS_1.length; _i++) {
+            var Event_1 = EVENTS_1[_i];
+            if (Event_1.eventId == eventId) {
+                return Promise.resolve(Event_1);
+            }
+        }
+        return null;
     };
-    EventService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], EventService);
     return EventService;
 }());
+EventService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], EventService);
 exports.EventService = EventService;
 //# sourceMappingURL=event.service.js.map
