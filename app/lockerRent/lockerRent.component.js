@@ -15,11 +15,12 @@ var LockerComponent = (function () {
     function LockerComponent(lockerService) {
         this.lockerService = lockerService;
     }
+    LockerComponent.prototype.sendEmail = function () {
+    };
     LockerComponent = __decorate([
         core_1.Component({
             selector: 'lockerRent',
-            template: "\n    <h3>Skapoversikt</h3>\n    <ul class=\"skapLeie\">\n      <li *ngFor=\"let lockerRent of lockerRent\" [class.selected]=\"lockerRent===selectedLockerRent\" (click)=\"onselect(lockerRent)\" >\n        <span class=\"badge\"> Skapleie id: {{lockerRent.lockerRentId}}   </span>\n      </li>\n    </ul>\n    <locker-detail></locker-detail>\n",
-            providers: [lockerRent_service_1.LockerRentService]
+            template: "\n  <div id=\"epost\">\n  <form id=\"epost-form\" ng-submit=\"sendEmail()\">\n    <input type=\"email\" name=\"epost\">\n    <input type=\"submit\" value=\"Send Epost\">\n    <div id=\"info\">Fyll inn din student-epost (brukernavn@stud.ntnu.no)</div>\n  </form>\n  </div>\n"
         }), 
         __metadata('design:paramtypes', [lockerRent_service_1.LockerRentService])
     ], LockerComponent);

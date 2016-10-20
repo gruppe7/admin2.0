@@ -26,7 +26,7 @@ import { Locker } from './locker';
     <div id="under" *ngIf="selectedLocker">
       <ul><li id="link" (click)="onAttend()"> Lei skap </li></ul>
       <div id="attend" *ngIf="selectAttend">
-    <locker-detail></locker-detail>
+    <lockerRent></lockerRent>
     </div>
   `,
   providers: [LockerService]

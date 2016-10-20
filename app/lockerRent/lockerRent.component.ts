@@ -4,26 +4,30 @@ import { Component } from '@angular/core';
 
 import { LockerRent } from './lockerRent';
 
+import { Locker } from './locker';
+import { LockerComponent } from './locker.component';
+
 import { LockerRentService } from './lockerRent.service';
 
 
 @Component({
   selector: 'lockerRent',
   template: `
-    <h3>Skapoversikt</h3>
-    <ul class="skapLeie">
-      <li *ngFor="let lockerRent of lockerRent" [class.selected]="lockerRent===selectedLockerRent" (click)="onselect(lockerRent)" >
-        <span class="badge"> Skapleie id: {{lockerRent.lockerRentId}}   </span>
-      </li>
-    </ul>
-    <locker-detail></locker-detail>
-`,
-providers: [LockerRentService]
+  <div id="epost">
+  <form id="epost-form" ng-submit="sendEmail()">
+    <input type="email" name="epost">
+    <input type="submit" value="Send Epost">
+    <div id="info">Fyll inn din student-epost (brukernavn@stud.ntnu.no)</div>
+  </form>
+  </div>
+`
 })
 
 export class LockerComponent {
-  lockers: LockerRent[];
-  selectedLocker: LockerRent;
   constructor(private lockerService: LockerRentService) {}
-  
+
+  sendEmail(){
+
+  }
+
 }
