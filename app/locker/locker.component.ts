@@ -20,10 +20,14 @@ import { Locker } from './locker';
       <button type="submit" (click)="search()"> søk </button>
     </p>
       <li *ngFor="let locker of lockers" [class.selected]="locker===selectedLocker" (click)="onselect(locker)" >
-        <span class="badge"> Skapnummer: {{locker.id}}   </span> Etasje: {{locker.floor}}
+        <span id="indicator" class="badge"> Skapnummer: {{locker.id}}   </span> Etasje: {{locker.floor}}
       </li>
     </ul>
+    <div id="under" *ngIf="selectedLocker">
+      <ul><li id="link" (click)="onAttend()"> Lei skap </li></ul>
+      <div id="attend" *ngIf="selectAttend">
     <locker-detail></locker-detail>
+    </div>
   `,
   providers: [LockerService]
 })
@@ -40,6 +44,9 @@ export class LockerComponent {
               .switchMap(term => this.lockerService.search(term)
               .subscribe(items => this.items = items));
               */
+  }
+  onAttend(): void{
+     this.selectedLocker.taken = true;
   }
 
   getLockers(): void {

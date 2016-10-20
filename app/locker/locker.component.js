@@ -21,6 +21,9 @@ var LockerComponent = (function () {
                     .subscribe(items => this.items = items));
                     */
     }
+    LockerComponent.prototype.onAttend = function () {
+        this.selectedLocker.taken = true;
+    };
     LockerComponent.prototype.getLockers = function () {
         var _this = this;
         this.lockerService.getLockers().then(function (lockers) { return _this.lockers = lockers; });
@@ -39,7 +42,7 @@ var LockerComponent = (function () {
     LockerComponent = __decorate([
         core_1.Component({
             selector: 'lockers',
-            template: "\n    <h3>Skapoversikt</h3>\n    <ul class=\"skap\">\n    <p>\n      <input type=\"text\" [(ngModel)]=\"term\"/>\n      <button type=\"submit\" (click)=\"search()\"> s\u00F8k </button>\n    </p>\n      <li *ngFor=\"let locker of lockers\" [class.selected]=\"locker===selectedLocker\" (click)=\"onselect(locker)\" >\n        <span class=\"badge\"> Skapnummer: {{locker.id}}   </span> Etasje: {{locker.floor}}\n      </li>\n    </ul>\n    <locker-detail></locker-detail>\n  ",
+            template: "\n    <h3>Skapoversikt</h3>\n    <ul class=\"skap\">\n    <p>\n      <input type=\"text\" [(ngModel)]=\"term\"/>\n      <button type=\"submit\" (click)=\"search()\"> s\u00F8k </button>\n    </p>\n      <li *ngFor=\"let locker of lockers\" [class.selected]=\"locker===selectedLocker\" (click)=\"onselect(locker)\" >\n        <span id=\"indicator\" class=\"badge\"> Skapnummer: {{locker.id}}   </span> Etasje: {{locker.floor}}\n      </li>\n    </ul>\n    <div id=\"under\" *ngIf=\"selectedLocker\">\n      <ul><li id=\"link\" (click)=\"onAttend()\"> Lei skap </li></ul>\n      <div id=\"attend\" *ngIf=\"selectAttend\">\n    <locker-detail></locker-detail>\n    </div>\n  ",
             providers: [locker_service_1.LockerService]
         }), 
         __metadata('design:paramtypes', [locker_service_1.LockerService])

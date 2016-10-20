@@ -46,6 +46,7 @@ describe('Testing LockerService', () => {
       done();
     });
   });
+  
 
   it('#search should return lockers matching the search term', done => {
     lockerService.search('101').then( lockers =>{
