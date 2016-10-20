@@ -12,11 +12,14 @@ $ npm start
 ## Testing with Jasmine/Karma
 
 ```
+# Install Jasmine:
+$ npm install jasmine-core --save-dev
+
 # Install Karma:
 $ npm install karma --save-dev
 
-# Install plugins that your project needs:
-$ npm install karma-jasmine karma-chrome-launcher --save-dev
+# Install plugins that the project needs:
+$ npm install karma-jasmine karma-chrome-launcher karma-jasmine-html-reporter karma-htmlfile-repoter --save-dev
 
 # Run tests
 $ npm test
