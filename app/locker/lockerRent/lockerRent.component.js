@@ -19,7 +19,7 @@ var LockerRentComponent = (function () {
     LockerRentComponent = __decorate([
         core_1.Component({
             selector: 'lockerRent',
-            template: "\n  <div id=\"epost\">\n  <form id=\"epost-form\" ng-submit=\"sendEmail()\">\n    <input type=\"email\" name=\"epost\">\n    <input type=\"submit\" value=\"Send Epost\">\n    <div id=\"info\">Fyll inn din student-epost (brukernavn@stud.ntnu.no)</div>\n  </form>\n  </div>\n"
+            template: "\n  <div id=\"vipps\">\n  <form id=\"vipps-form\">\n    Kvittering fra Vipps:\n    <br> <input type=\"text\" name=\"kvittering\">\n  </form>\n  </div>\n  <div id=\"epost\">\n  <form id=\"epost-form\" ng-submit=\"sendEmail()\">\n    <input type=\"email\" name=\"epost\">\n    <input type=\"submit\" value=\"Send Epost\">\n    <div id=\"info\">Fyll inn din student-epost (brukernavn@stud.ntnu.no)</div>\n  </form>\n  </div>\n"
         }), 
         __metadata('design:paramtypes', [])
     ], LockerRentComponent);
