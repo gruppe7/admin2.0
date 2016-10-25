@@ -2,12 +2,10 @@
 
 import { Component } from '@angular/core';
 
+import { Locker } from '../locker';
+import { LockerComponent } from '../locker.component';
 import { LockerRent } from './lockerRent';
 
-import { Locker } from './locker';
-import { LockerComponent } from './locker.component';
-
-import { LockerRentService } from './lockerRent.service';
 
 
 @Component({
@@ -23,8 +21,8 @@ import { LockerRentService } from './lockerRent.service';
 `
 })
 
-export class LockerComponent {
-  constructor(private lockerService: LockerRentService) {}
+export class LockerRentComponent {
+  constructor(){};
 
   sendEmail(){
 
