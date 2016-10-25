@@ -3,20 +3,20 @@
 **  This is the login view with username/password input.
 */
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { UserService } from './user.service';
+import {  LoginService } from './login.service';
 
 @Component({
+  moduleId : module.id,
   selector: 'login',
   template: `
     <div id=login>
-
         <p>Brukernavn</p>
-        <input [(ngModel)]="username" type="text" id="username" name="username"><br>
+        <input [(ngModel)]="model.username" #username="ngModel" required type="text" id="username" name="username"><br>
         <p>Passord:</p>
-        <input [(ngModel)]="password" type="password" id="password" name="password"> <br>
+        <input [(ngModel)]="model.password" #password="ngModel" required type="password" id="password" name="password"> <br>
           <button (click)="onSubmit()" type="submit">Logg inn</button>
 
     </div>
@@ -24,19 +24,29 @@ import { UserService } from './user.service';
     <div *ngIf="!login">Ikke logget inn</div>
       `
 })
-export class LoginComponent{
-  username: string;
-  password: string;
-  login = false;
-  error = false;
-  constructor(private userService: UserService, private router: Router){}
+export class LoginComponent implements OnInit{
+  model: any = {};
+  loading = false;
+  error = '';
 
-  onSubmit(): void{
-    if(this.userService.login_mock(this.username, this.password)){
-      this.login = true;
-      this.router.navigate(['']);
-    }
+  constructor(private loginService: LoginService, private router: Router ){ }
 
-
+  ngOnInit(){
+    this.loginService.logout(); //reset login status
   }
+
+  logIn(){
+    this.loading = true;
+    this.loginService.login(this.model.username, this.model.password)
+      .subscribe(result => {
+        if(result === true) {   //login succsessful
+          this.router.navigate(['/']);
+        } else {                //login failed
+          this.error = 'Feil brukernavn eller passord';
+          this.loading = false
+        }
+      });
+  }
+
+
 }

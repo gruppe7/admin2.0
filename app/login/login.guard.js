@@ -9,17 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var user_service_1 = require('./user.service');
+var router_1 = require('@angular/router');
 var LoggedInGuard = (function () {
-    function LoggedInGuard(user) {
-        this.user = user;
+    function LoggedInGuard(router) {
+        this.router = router;
     }
     LoggedInGuard.prototype.canActivate = function () {
-        return this.user.isLoggedIn();
+        if (localStorage.getItem('auth_token')) {
+            return true;
+        }
+        this.router.navigate(['/login']);
     };
     LoggedInGuard = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [user_service_1.UserService])
+        __metadata('design:paramtypes', [router_1.Router])
     ], LoggedInGuard);
     return LoggedInGuard;
 }());

@@ -11,7 +11,7 @@ exports.fakeBackendProvider = {
     useFactory: function (backend, options) {
         // configure fake backend
         backend.connections.subscribe(function (connection) {
-            var testUser = { username: 'test', password: 'test', firstName: 'Test', lastName: 'User' };
+            var testUser = { username: 'eliassa', password: 'test' };
             // wrap in timeout to simulate server api call
             setTimeout(function () {
                 // fake authenticate api end point

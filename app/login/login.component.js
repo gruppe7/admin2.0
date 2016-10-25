@@ -14,28 +14,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var user_service_1 = require("./user.service");
+var login_service_1 = require("./login.service");
 var LoginComponent = (function () {
-    function LoginComponent(userService, router) {
-        this.userService = userService;
+    function LoginComponent(loginService, router) {
+        this.loginService = loginService;
         this.router = router;
-        this.login = false;
-        this.error = false;
+        this.model = {};
+        this.loading = false;
+        this.error = '';
     }
-    LoginComponent.prototype.onSubmit = function () {
-        if (this.userService.login_mock(this.username, this.password)) {
-            this.login = true;
-            this.router.navigate(['']);
-        }
+    LoginComponent.prototype.ngOnInit = function () {
+        this.loginService.logout(); //reset login status
+    };
+    LoginComponent.prototype.logIn = function () {
+        var _this = this;
+        this.loading = true;
+        this.loginService.login(this.model.username, this.model.password)
+            .subscribe(function (result) {
+            if (result === true) {
+                _this.router.navigate(['/']);
+            }
+            else {
+                _this.error = 'Feil brukernavn eller passord';
+                _this.loading = false;
+            }
+        });
     };
     return LoginComponent;
 }());
 LoginComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'login',
-        template: "\n    <div id=login>\n\n        <p>Brukernavn</p>\n        <input [(ngModel)]=\"username\" type=\"text\" id=\"username\" name=\"username\"><br>\n        <p>Passord:</p>\n        <input [(ngModel)]=\"password\" type=\"password\" id=\"password\" name=\"password\"> <br>\n          <button (click)=\"onSubmit()\" type=\"submit\">Logg inn</button>\n\n    </div>\n    <div *ngIf=\"login\">Logget inn som {{username}}</div>\n    <div *ngIf=\"!login\">Ikke logget inn</div>\n      "
+        template: "\n    <div id=login>\n        <p>Brukernavn</p>\n        <input [(ngModel)]=\"model.username\" #username=\"ngModel\" required type=\"text\" id=\"username\" name=\"username\"><br>\n        <p>Passord:</p>\n        <input [(ngModel)]=\"model.password\" #password=\"ngModel\" required type=\"password\" id=\"password\" name=\"password\"> <br>\n          <button (click)=\"onSubmit()\" type=\"submit\">Logg inn</button>\n\n    </div>\n    <div *ngIf=\"login\">Logget inn som {{username}}</div>\n    <div *ngIf=\"!login\">Ikke logget inn</div>\n      "
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
+    __metadata("design:paramtypes", [login_service_1.LoginService, router_1.Router])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

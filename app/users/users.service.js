@@ -1,3 +1,6 @@
+/*
+**  Author: Elias Sundby Aukan
+*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -8,29 +11,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/*
-**  Author: Elias Sundby Aukan
-*/
 var core_1 = require('@angular/core');
-var mock_users_1 = require('./mock-users');
+var http_1 = require('@angular/http');
+require('rxjs/add/operator/map');
+var login_service_1 = require('../login/login.service');
 var UsersService = (function () {
-    function UsersService() {
+    function UsersService(http, loginService) {
+        this.http = http;
+        this.loginService = loginService;
     }
     UsersService.prototype.getUsers = function () {
-        return Promise.resolve(mock_users_1.USERS);
-    };
-    UsersService.prototype.checkLoginTest = function (username, password) {
-        for (var _i = 0, USERS_1 = mock_users_1.USERS; _i < USERS_1.length; _i++) {
-            var User_1 = USERS_1[_i];
-            if (User_1.username === username && User_1.password === password) {
-                return true;
-            }
-        }
-        return false;
+        // add authorization header with jwt token
+        var headers = new http_1.Headers({ 'Authorization': 'Bearer ' + this.loginService.token });
+        var options = new http_1.RequestOptions({ headers: headers });
+        // get users from api
+        return this.http.get('/api/users', options)
+            .map(function (response) { return response.json(); });
     };
     UsersService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http, login_service_1.LoginService])
     ], UsersService);
     return UsersService;
 }());

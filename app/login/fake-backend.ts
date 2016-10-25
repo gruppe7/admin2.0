@@ -13,7 +13,7 @@ export let fakeBackendProvider = {
     useFactory: (backend, options) => {
         // configure fake backend
         backend.connections.subscribe((connection: MockConnection) => {
-            let testUser = { username: 'test', password: 'test', firstName: 'Test', lastName: 'User' };
+            let testUser = { username: 'eliassa', password: 'test'};
 
             // wrap in timeout to simulate server api call
             setTimeout(() => {
