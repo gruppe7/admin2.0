@@ -3,8 +3,9 @@
 **  This class contains all the tests run with jasmine/karma
 */
 "use strict";
-var event_service_1 = require("./events/event.service");
-var locker_service_1 = require("./locker/locker.service");
+var event_service_1 = require('./events/event.service');
+var locker_service_1 = require('./locker/locker.service');
+/**  EventService  **/
 describe('Testing EventService', function () {
     var eventService;
     var stdTime;
@@ -25,6 +26,7 @@ describe('Testing EventService', function () {
         });
     });
 });
+/**  LockerService  **/
 describe('Testing LockerService', function () {
     var lockerService;
     beforeEach(function () { lockerService = new locker_service_1.LockerService(); });

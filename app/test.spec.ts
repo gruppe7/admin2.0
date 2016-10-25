@@ -11,13 +11,14 @@ import { Event } from './events/event';
 import { LockerService } from './locker/locker.service';
 import { Locker } from './locker/locker';
 
+
+/**  EventService  **/
 describe('Testing EventService', () => {
   let eventService: EventService;
   let stdTime;
   beforeEach(() => {
     eventService = new EventService();
    });
-
 
   it('#getEvents should return all events', done => {
     eventService.getEvents().then(events => {
@@ -36,6 +37,8 @@ it('#getEvent should return a single event', done => {
  });
 });
 
+
+/**  LockerService  **/
 describe('Testing LockerService', () => {
   let lockerService: LockerService;
   beforeEach(() => { lockerService = new LockerService(); });

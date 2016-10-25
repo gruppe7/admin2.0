@@ -1,3 +1,8 @@
+/*
+**  Author: Elias Sundby Aukan
+**  This is called upon on startup, and bootstraps the system.
+**
+*/
 "use strict";
 var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
 var app_module_1 = require('./app.module');

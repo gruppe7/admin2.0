@@ -1,4 +1,5 @@
-/*  Author: Elias Sundby Aukan
+/*
+**  Author: Elias Sundby Aukan
 **  This class manages routing in the web app.
 **  Here we declare which component that is displayed at what path.
 */

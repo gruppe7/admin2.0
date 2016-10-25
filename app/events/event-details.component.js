@@ -8,8 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/*  Author: Elias Sundby Aukan
-**  not yet deployed
+/*
+**  Author: Elias Sundby Aukan
+**  This lists out the information of a given Event.
+**  Temporarily not used.
 */
 var core_1 = require('@angular/core');
 var EventDetailsComponent = (function () {
@@ -18,7 +20,7 @@ var EventDetailsComponent = (function () {
     EventDetailsComponent = __decorate([
         core_1.Component({
             selector: 'event-details',
-            template: "\n    <div *ngIf=\"event\">\n      <h2>{{hero.name}} Detaljer! </h2>\n      <div><label>Navn: </label> {{event.name}}</div>\n      <div>\n        <label>Beskrivelse:</label> {{event.description}}\n      </div>\n    </div>\n  "
+            template: "\n    <div *ngIf=\"event\">\n      <h2>{{event.name}} Detaljer! </h2>\n      <div><label>Navn: </label> {{event.name}}</div>\n      <div>\n        <label>Beskrivelse:</label> {{event.description}}\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], EventDetailsComponent);

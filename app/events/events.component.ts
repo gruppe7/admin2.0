@@ -1,4 +1,8 @@
-//Auhtor: Elias S. Aukan
+/*
+**  Auhtor: Elias S. Aukan
+**  This is the component that lists all the Events.
+**  No admin functionality implemented here.
+*/
 
 import { Component, OnInit } from '@angular/core';
 

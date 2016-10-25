@@ -1,4 +1,9 @@
-//Author: Elias S. Aukan
+/*
+**  Author: Elias S. Aukan
+**  This describes the Event class
+**
+*/
+
 
 export class Event {
   eventId: number;

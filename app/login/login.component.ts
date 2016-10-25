@@ -1,5 +1,6 @@
 /*
 **  Author: Elias Sundby Aukan
+**  This is the login view with username/password input.
 */
 
 import { Component } from '@angular/core';
