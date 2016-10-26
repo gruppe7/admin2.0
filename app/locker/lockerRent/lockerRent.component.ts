@@ -11,24 +11,21 @@ import { LockerRent } from './lockerRent';
 @Component({
   selector: 'lockerRent',
   template: `
-  <div id="vipps">
-  <form id="vipps-form">
-    Kvittering fra Vipps:
-    <br> <input type="text" name="kvittering">
-  </form>
-  </div>
   <div id="epost">
-  <form id="epost-form" ng-submit="sendEmail()">
-    <input type="email" name="epost">
-    <input type="submit" value="Send Epost">
+    <input type="epost" name="epost">
+    <input type="submit" value="Til betaling" (click)="holdLocker()">
     <div id="info">Fyll inn din student-epost (brukernavn@stud.ntnu.no)</div>
-  </form>
   </div>
 `
 })
 
 export class LockerRentComponent {
-  constructor(){};
+  constructor(private lockerComponent: LockerComponent){};
+
+  holdLocker(){
+    this.lockerComponent.rentLocker = true;
+  }
+
 
   sendEmail(){
 

@@ -15,6 +15,7 @@ import { EventAttendComponent } from './events/event-attend.component';
 import { LockerComponent } from './locker/locker.component';
 import { LockerDetailComponent } from './locker/locker-detail.component';
 import { LockerRentComponent } from './locker/lockerRent/lockerRent.component';
+import { LockerPaymentComponent } from './locker/lockerPayment/lockerPayment.component';
 
 import { LoginComponent } from './login/login.component';
 
@@ -34,6 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
     LockerComponent,
     LockerDetailComponent,
     LockerRentComponent,
+    LockerPaymentComponent,
     DashboardComponent,
     LoginComponent,
     ProfileComponent

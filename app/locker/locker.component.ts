@@ -13,6 +13,7 @@ import { LockerRentComponent } from './lockerRent/lockerRent.component';
 @Component({
   selector: 'lockers',
   template: `
+    <div  id="lockerOverview" *ngIf="!rentLocker">
     <h3>Skapoversikt</h3>
     <ul class="skap">
     <p>
@@ -25,7 +26,13 @@ import { LockerRentComponent } from './lockerRent/lockerRent.component';
     </ul>
     <div id="under" *ngIf="selectedLocker">
       <ul><li id="link" (click)="onAttend()"> Lei skap </li></ul>
-      <div id="attend" *ngIf="selectAttend"><lockerRent></lockerRent></div>
+      <div id="attend" *ngIf="selectAttend">
+      <lockerRent></lockerRent>
+      </div>
+    </div>
+    </div>
+    <div id="lockerRent" *ngIf="rentLocker">
+    <lockerPayment></lockerPayment>
     </div>
   `,
   providers: [LockerService]
@@ -37,6 +44,7 @@ export class LockerComponent {
   lockers: Locker[];
   selectedLocker: Locker;
   selectAttend: boolean = false;
+  rentLocker: boolean = false;
   constructor(private lockerService: LockerService) {
   /*  this.term.valueChanges
               .debounceTime(400)
@@ -45,6 +53,10 @@ export class LockerComponent {
               .subscribe(items => this.items = items));
               */
   }
+
+
+
+
   onAttend(): void{
      this.selectAttend = true;
   }
