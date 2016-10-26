@@ -13,24 +13,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-require('rxjs/add/operator/map');
-var login_service_1 = require('../login/login.service');
 var UsersService = (function () {
-    function UsersService(http, loginService) {
+    function UsersService(http) {
         this.http = http;
-        this.loginService = loginService;
     }
-    UsersService.prototype.getUsers = function () {
-        // add authorization header with jwt token
-        var headers = new http_1.Headers({ 'Authorization': 'Bearer ' + this.loginService.token });
-        var options = new http_1.RequestOptions({ headers: headers });
-        // get users from api
-        return this.http.get('/api/users', options)
-            .map(function (response) { return response.json(); });
+    UsersService.prototype.getAll = function () {
+        return this.http.get('/api/users', this.jwt()).map(function (response) { return response.json(); });
+    };
+    UsersService.prototype.getById = function (id) {
+        return this.http.get('/api/users/' + id, this.jwt()).map(function (response) { return response.json(); });
+    };
+    UsersService.prototype.create = function (user) {
+        return this.http.post('/api/users', user, this.jwt()).map(function (response) { return response.json(); });
+    };
+    UsersService.prototype.update = function (user) {
+        return this.http.put('/api/users/' + user.id, user, this.jwt()).map(function (response) { return response.json(); });
+    };
+    UsersService.prototype.delete = function (id) {
+        return this.http.delete('/api/users/' + id, this.jwt()).map(function (response) { return response.json(); });
+    };
+    // private helper methods
+    UsersService.prototype.jwt = function () {
+        // create authorization header with jwt token
+        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser && currentUser.token) {
+            var headers = new http_1.Headers({ 'Authorization': 'Bearer ' + currentUser.token });
+            return new http_1.RequestOptions({ headers: headers });
+        }
     };
     UsersService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, login_service_1.LoginService])
+        __metadata('design:paramtypes', [http_1.Http])
     ], UsersService);
     return UsersService;
 }());

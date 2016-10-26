@@ -1,3 +1,7 @@
+/*
+**  Author: Elias Sundby Aukan
+**  This guard keeps unauthorized users from accessing the administation functions
+*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,21 +14,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var LoggedInGuard = (function () {
-    function LoggedInGuard(router) {
+var AuthGuard = (function () {
+    function AuthGuard(router) {
         this.router = router;
     }
-    LoggedInGuard.prototype.canActivate = function () {
-        if (localStorage.getItem('auth_token')) {
+    AuthGuard.prototype.canActivate = function () {
+        if (localStorage.getItem('currentUser')) {
+            // logged in so return true
             return true;
         }
+        // not logged in so redirect to login page
         this.router.navigate(['/login']);
+        return false;
     };
-    LoggedInGuard = __decorate([
+    AuthGuard = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [router_1.Router])
-    ], LoggedInGuard);
-    return LoggedInGuard;
+    ], AuthGuard);
+    return AuthGuard;
 }());
-exports.LoggedInGuard = LoggedInGuard;
-//# sourceMappingURL=login.guard.js.map
+exports.AuthGuard = AuthGuard;
+//# sourceMappingURL=auth.guard.js.map

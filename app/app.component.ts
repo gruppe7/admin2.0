@@ -15,8 +15,12 @@ import { UsersService } from './users/users.service';
 import { User } from './users/user';
 
 import { LoginComponent } from './login/login.component';
-import { UserService } from './login/user.service';
-import { LoggedInGuard } from './login/login.guard';
+import { AuthenticationService, AuthGuard } from './login/index';
+
+//fake backend
+import { fakeBackendProvider } from './login/fake-backend';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
 
 
 
@@ -45,17 +49,22 @@ import { LoggedInGuard } from './login/login.guard';
     EventService,
     LockerService,
     UsersService,
-    UserService,
-    LoggedInGuard,
-    User
+    AuthenticationService,
+    AuthGuard,
+    User,
+
+    // proveders for the fake backend:
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
             ]
 })
 export class AppComponent {
   title = 'ADMIN 2.0';
-  login: boolean;
 
-  constructor(userService: UserService){
-    this.login = userService.isLoggedIn();
+
+  constructor(){
+
   }
 
 

@@ -18,12 +18,14 @@ var event_service_1 = require('./events/event.service');
 var locker_service_1 = require('./locker/locker.service');
 var users_service_1 = require('./users/users.service');
 var user_1 = require('./users/user');
-var user_service_1 = require('./login/user.service');
-var login_guard_1 = require('./login/login.guard');
+var index_1 = require('./login/index');
+//fake backend
+var fake_backend_1 = require('./login/fake-backend');
+var testing_1 = require('@angular/http/testing');
+var http_1 = require('@angular/http');
 var AppComponent = (function () {
-    function AppComponent(userService) {
+    function AppComponent() {
         this.title = 'ADMIN 2.0';
-        this.login = userService.isLoggedIn();
     }
     AppComponent = __decorate([
         core_1.Component({
@@ -33,15 +35,18 @@ var AppComponent = (function () {
                 event_service_1.EventService,
                 locker_service_1.LockerService,
                 users_service_1.UsersService,
-                user_service_1.UserService,
-                login_guard_1.LoggedInGuard,
-                user_1.User
+                index_1.AuthenticationService,
+                index_1.AuthGuard,
+                user_1.User,
+                // proveders for the fake backend:
+                fake_backend_1.fakeBackendProvider,
+                testing_1.MockBackend,
+                http_1.BaseRequestOptions
             ]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof user_service_1.UserService !== 'undefined' && user_service_1.UserService) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
-    var _a;
 }());
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
