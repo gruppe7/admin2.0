@@ -12,7 +12,7 @@ import { LockerComponent } from './locker/locker.component'
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { LoginComponent } from './login/login.component';
-import { LoggedInGuard } from './login/login.guard';
+import { AuthGuard } from './login/index';
 
 import { ProfileComponent } from './profile/profile.component';
 
@@ -46,7 +46,7 @@ const appRoutes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [LoggedInGuard]
+    canActivate: [AuthGuard]
 
   }
 ];
