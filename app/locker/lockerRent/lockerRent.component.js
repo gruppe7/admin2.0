@@ -24,7 +24,7 @@ var LockerRentComponent = (function () {
     LockerRentComponent = __decorate([
         core_1.Component({
             selector: 'lockerRent',
-            template: "\n  <div id=\"epost\">\n    <input type=\"epost\" name=\"epost\">\n    <input type=\"submit\" value=\"Til betaling\" (click)=\"holdLocker()\">\n    <div id=\"info\">Fyll inn din student-epost (brukernavn@stud.ntnu.no)</div>\n  </div>\n"
+            template: "\n  <div id=\"epost\">\n    <h1>{{lockerComponent.selectedLocker.id}}</h1>\n    <input type=\"epost\" name=\"epost\">\n    <input type=\"submit\" value=\"Til betaling\" (click)=\"holdLocker()\">\n    <div id=\"info\">Fyll inn din student-epost (brukernavn@stud.ntnu.no)</div>\n  </div>\n"
         }), 
         __metadata('design:paramtypes', [locker_component_1.LockerComponent])
     ], LockerRentComponent);
