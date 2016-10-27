@@ -1,8 +1,14 @@
+/*
+**  Author: Elias Sundby Aukan
+**  This is the application module, that ties the components together.
+**
+*/
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
+
 
 
 import { AppComponent }   from './app.component';

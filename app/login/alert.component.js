@@ -8,23 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/*
-**  Author: Elias Sundby Aukan
-**  This lists out the information of a given Event.
-**  Temporarily not used.
-*/
 var core_1 = require('@angular/core');
-var EventDetailsComponent = (function () {
-    function EventDetailsComponent() {
+var index_1 = require('./index');
+var AlertComponent = (function () {
+    function AlertComponent(alertService) {
+        this.alertService = alertService;
     }
-    EventDetailsComponent = __decorate([
+    AlertComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.alertService.getMessage().subscribe(function (message) { _this.message = message; });
+    };
+    AlertComponent = __decorate([
         core_1.Component({
-            selector: 'event-details',
-            template: "\n    <div *ngIf=\"event\">\n      <h2>{{event.name}} Detaljer! </h2>\n      <div><label>Navn: </label> {{event.name}}</div>\n      <div>\n        <label>Beskrivelse:</label> {{event.description}}\n      </div>\n    </div>\n  "
+            moduleId: module.id,
+            selector: 'alert',
+            template: "\n      <div *ngIf=\"message\" [ngClass]=\"{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }\">{{message.text}}</div>\n    "
         }), 
-        __metadata('design:paramtypes', [])
-    ], EventDetailsComponent);
-    return EventDetailsComponent;
+        __metadata('design:paramtypes', [index_1.AlertService])
+    ], AlertComponent);
+    return AlertComponent;
 }());
-exports.EventDetailsComponent = EventDetailsComponent;
-//# sourceMappingURL=event-details.component.js.map
+exports.AlertComponent = AlertComponent;
+//# sourceMappingURL=alert.component.js.map

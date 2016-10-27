@@ -1,3 +1,6 @@
+/*
+**  Author: Elias Sundby Aukan
+*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -8,29 +11,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/*
-**  Author: Elias Sundby Aukan
-*/
 var core_1 = require('@angular/core');
-var mock_users_1 = require('./mock-users');
+var http_1 = require('@angular/http');
 var UsersService = (function () {
-    function UsersService() {
+    function UsersService(http) {
+        this.http = http;
     }
-    UsersService.prototype.getUsers = function () {
-        return Promise.resolve(mock_users_1.USERS);
+    UsersService.prototype.getAll = function () {
+        return this.http.get('/api/users', this.jwt()).map(function (response) { return response.json(); });
     };
-    UsersService.prototype.checkLoginTest = function (username, password) {
-        for (var _i = 0, USERS_1 = mock_users_1.USERS; _i < USERS_1.length; _i++) {
-            var User_1 = USERS_1[_i];
-            if (User_1.username === username && User_1.password === password) {
-                return true;
-            }
+    UsersService.prototype.getById = function (id) {
+        return this.http.get('/api/users/' + id, this.jwt()).map(function (response) { return response.json(); });
+    };
+    UsersService.prototype.create = function (user) {
+        return this.http.post('/api/users', user, this.jwt()).map(function (response) { return response.json(); });
+    };
+    UsersService.prototype.update = function (user) {
+        return this.http.put('/api/users/' + user.id, user, this.jwt()).map(function (response) { return response.json(); });
+    };
+    UsersService.prototype.delete = function (id) {
+        return this.http.delete('/api/users/' + id, this.jwt()).map(function (response) { return response.json(); });
+    };
+    // private helper methods
+    UsersService.prototype.jwt = function () {
+        // create authorization header with jwt token
+        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser && currentUser.token) {
+            var headers = new http_1.Headers({ 'Authorization': 'Bearer ' + currentUser.token });
+            return new http_1.RequestOptions({ headers: headers });
         }
-        return false;
     };
     UsersService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], UsersService);
     return UsersService;
 }());

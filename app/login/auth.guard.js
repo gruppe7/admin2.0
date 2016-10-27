@@ -1,3 +1,7 @@
+/*
+**  Author: Elias Sundby Aukan
+**  This guard keeps unauthorized users from accessing the administation functions
+*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,19 +13,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var user_service_1 = require('./user.service');
-var LoggedInGuard = (function () {
-    function LoggedInGuard(user) {
-        this.user = user;
+var router_1 = require('@angular/router');
+var AuthGuard = (function () {
+    function AuthGuard(router) {
+        this.router = router;
     }
-    LoggedInGuard.prototype.canActivate = function () {
-        return this.user.isLoggedIn();
+    AuthGuard.prototype.canActivate = function () {
+        if (localStorage.getItem('currentUser')) {
+            // logged in so return true
+            return true;
+        }
+        // not logged in so redirect to login page
+        this.router.navigate(['/login']);
+        return false;
     };
-    LoggedInGuard = __decorate([
+    AuthGuard = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [user_service_1.UserService])
-    ], LoggedInGuard);
-    return LoggedInGuard;
+        __metadata('design:paramtypes', [router_1.Router])
+    ], AuthGuard);
+    return AuthGuard;
 }());
-exports.LoggedInGuard = LoggedInGuard;
-//# sourceMappingURL=login.guard.js.map
+exports.AuthGuard = AuthGuard;
+//# sourceMappingURL=auth.guard.js.map

@@ -8,5 +8,14 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false
-  }
+
+
+  },
+  "exclude": [
+      "node_modules"
+  ],
+  "files": [
+      "node_modules/rx/ts/rx.all.d.ts"
+  ]
+
 }

@@ -1,4 +1,8 @@
-//Author: Elias S. Aukan
+/*
+**  Author: Elias S. Aukan
+**  This describes the Event class
+**
+*/
 "use strict";
 var Event = (function () {
     function Event() {
