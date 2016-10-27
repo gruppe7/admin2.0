@@ -14,6 +14,12 @@ import { LockerRentComponent } from './lockerRent/lockerRent.component';
   selector: 'lockers',
   template: `
     <div  id="lockerOverview" *ngIf="!rentLocker">
+      <div id="rent" *ngIf="selectedLocker">
+        <ul><li id="link" (click)="onAttend()"> Lei skap </li></ul>
+        <div id="attend" *ngIf="selectAttend">
+        <lockerRent></lockerRent>
+        </div>
+      </div>
     <h3>Skapoversikt</h3>
     <ul class="skap">
     <p>
@@ -21,15 +27,14 @@ import { LockerRentComponent } from './lockerRent/lockerRent.component';
       <button type="submit" (click)="search()"> Søk </button>
     </p>
       <li *ngFor="let locker of lockers" [class.selected]="locker===selectedLocker" (click)="onSelect(locker)" >
-        <span id="indicator" class="badge"> Skapnummer: {{locker.id}}   </span> Etasje: {{locker.floor}}
+        <span id="indicator" class="badge"> Skap: {{locker.id}} Etasje: {{locker.floor}}
+        <div *ngIf="locker.taken" id="ledRed"></div>
+        <div *ngIf="!locker.taken" id="ledBlue"></div>
+        </span>
+
+
       </li>
     </ul>
-    <div id="under" *ngIf="selectedLocker">
-      <ul><li id="link" (click)="onAttend()"> Lei skap </li></ul>
-      <div id="attend" *ngIf="selectAttend">
-      <lockerRent></lockerRent>
-      </div>
-    </div>
     </div>
     <div id="lockerRent" *ngIf="rentLocker">
     <lockerPayment></lockerPayment>
