@@ -3,13 +3,17 @@
 **  This class contains all the tests run with jasmine/karma
 */
 
-import { inject } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
+import { Http } from '@angular/http';
 
 import { EventService } from './events/event.service';
 import { Event } from './events/event';
 
 import { LockerService } from './locker/locker.service';
 import { Locker } from './locker/locker';
+
+import { AuthenticationService } from './login/index';
+import { User } from './users/user'
 
 
 /**  EventService  **/
@@ -58,4 +62,13 @@ describe('Testing LockerService', () => {
       done();
     })
   })
+});
+
+/** AuthenticationService -- not yet implemented **/
+describe('Testing Authentication', () =>{
+  let authService: AuthenticationService;
+  beforeEach(() => { TestBed.configureTestingModule({ providers: [AuthenticationService, Http]});
+  });
+
+
 });

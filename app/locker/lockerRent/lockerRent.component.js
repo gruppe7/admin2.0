@@ -10,20 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var lockerRent_service_1 = require('./lockerRent.service');
-var LockerComponent = (function () {
-    function LockerComponent(lockerService) {
-        this.lockerService = lockerService;
+var locker_component_1 = require('../locker.component');
+var LockerRentComponent = (function () {
+    function LockerRentComponent(lockerComponent) {
+        this.lockerComponent = lockerComponent;
     }
-    LockerComponent = __decorate([
+    ;
+    LockerRentComponent.prototype.holdLocker = function () {
+        this.lockerComponent.rentLocker = true;
+    };
+    LockerRentComponent.prototype.sendEmail = function () {
+    };
+    LockerRentComponent = __decorate([
         core_1.Component({
             selector: 'lockerRent',
-            template: "\n    <h3>Skapoversikt</h3>\n    <ul class=\"skapLeie\">\n      <li *ngFor=\"let lockerRent of lockerRent\" [class.selected]=\"lockerRent===selectedLockerRent\" (click)=\"onselect(lockerRent)\" >\n        <span class=\"badge\"> Skapleie id: {{lockerRent.lockerRentId}}   </span>\n      </li>\n    </ul>\n    <locker-detail></locker-detail>\n",
-            providers: [lockerRent_service_1.LockerRentService]
+            template: "\n  <div id=\"epost\">\n    <h1>{{lockerComponent.selectedLocker.id}}</h1>\n    <input type=\"epost\" name=\"epost\">\n    <input type=\"submit\" value=\"Til betaling\" (click)=\"holdLocker()\">\n    <div id=\"info\">Fyll inn din student-epost (brukernavn@stud.ntnu.no)</div>\n  </div>\n"
         }), 
-        __metadata('design:paramtypes', [lockerRent_service_1.LockerRentService])
-    ], LockerComponent);
-    return LockerComponent;
+        __metadata('design:paramtypes', [locker_component_1.LockerComponent])
+    ], LockerRentComponent);
+    return LockerRentComponent;
 }());
-exports.LockerComponent = LockerComponent;
+exports.LockerRentComponent = LockerRentComponent;
 //# sourceMappingURL=lockerRent.component.js.map

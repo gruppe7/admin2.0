@@ -1,8 +1,3 @@
-/*
-**  Author: Elias Dunby Aukan, Henrik Bjørkheim.
-**  This class is the main component. This is where we display the component given by the router.
-**
-*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -19,7 +14,6 @@ var locker_service_1 = require("./locker/locker.service");
 var users_service_1 = require("./users/users.service");
 var user_1 = require("./users/user");
 var index_1 = require("./login/index");
-//fake backend
 var fake_backend_1 = require("./login/fake-backend");
 var testing_1 = require("@angular/http/testing");
 var http_1 = require("@angular/http");
@@ -28,7 +22,7 @@ var AppComponent = (function () {
         this.title = 'ADMIN 2.0';
     }
     AppComponent.prototype.ngOnInit = function () {
-        if (localStorage.getItem !== null) {
+        if (localStorage.getItem('currentUser') !== null) {
             this.login = true;
         }
         else {
@@ -49,7 +43,6 @@ AppComponent = __decorate([
             index_1.AuthGuard,
             index_1.AlertService,
             user_1.User,
-            // proveders for the fake backend:
             fake_backend_1.fakeBackendProvider,
             testing_1.MockBackend,
             http_1.BaseRequestOptions
@@ -58,4 +51,3 @@ AppComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], AppComponent);
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map

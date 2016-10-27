@@ -75,7 +75,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(){
-    if(localStorage.getItem !== null){
+    if(localStorage.getItem('currentUser') !== null ){
       this.login = true;
     }else{
       this.login = false;

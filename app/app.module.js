@@ -24,6 +24,8 @@ var events_component_1 = require('./events/events.component');
 var event_attend_component_1 = require('./events/event-attend.component');
 var locker_component_1 = require('./locker/locker.component');
 var locker_detail_component_1 = require('./locker/locker-detail.component');
+var lockerRent_component_1 = require('./locker/lockerRent/lockerRent.component');
+var lockerPayment_component_1 = require('./locker/lockerPayment/lockerPayment.component');
 var login_component_1 = require('./login/login.component');
 var profile_component_1 = require('./profile/profile.component');
 var AppModule = (function () {
@@ -43,6 +45,8 @@ var AppModule = (function () {
                 event_attend_component_1.EventAttendComponent,
                 locker_component_1.LockerComponent,
                 locker_detail_component_1.LockerDetailComponent,
+                lockerRent_component_1.LockerRentComponent,
+                lockerPayment_component_1.LockerPaymentComponent,
                 dashboard_component_1.DashboardComponent,
                 login_component_1.LoginComponent,
                 profile_component_1.ProfileComponent
