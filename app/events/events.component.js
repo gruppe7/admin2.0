@@ -13,8 +13,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var event_service_1 = require('./event.service');
+var core_1 = require("@angular/core");
+var event_service_1 = require("./event.service");
 var EventsComponent = (function () {
     function EventsComponent(eventService) {
         this.eventService = eventService;
@@ -34,14 +34,14 @@ var EventsComponent = (function () {
         var _this = this;
         this.eventService.getEvents().then(function (events) { return _this.events = events; });
     };
-    EventsComponent = __decorate([
-        core_1.Component({
-            selector: 'events',
-            template: "\n    <h3>Kommende eventer: </h3>\n    <ul class=\"eventer\">\n    <li *ngFor=\"let event of events\" [class.selected]=\"event===selectedEvent\" (click)=\"onSelect(event)\">\n      <span class=\"badge\"> {{event.eventId}}   </span>{{event.name}}\n    </li>\n    </ul>\n    <div id =\"under\" *ngIf=\"selectedEvent\">\n      <h2> {{selectedEvent.name}}   </h2>\n      <h3> {{selectedEvent.description}}</h3>\n      <ul><li id=\"link\" (click)=\"onAttend()\"> p\u00E5melding </li></ul>\n\n      <div id=\"attend\" *ngIf=\"selectAttend\">\n      <event-attend></event-attend>\n\n    </div>\n    "
-        }), 
-        __metadata('design:paramtypes', [event_service_1.EventService])
-    ], EventsComponent);
     return EventsComponent;
 }());
+EventsComponent = __decorate([
+    core_1.Component({
+        selector: 'events',
+        template: "\n    <h3>Kommende eventer: </h3>\n    <ul class=\"eventer\">\n    <li *ngFor=\"let event of events\" [class.selected]=\"event===selectedEvent\" (click)=\"onSelect(event)\">\n      <span class=\"badge\"> {{event.eventId}}   </span>{{event.name}}\n    </li>\n    </ul>\n    <div id =\"under\" *ngIf=\"selectedEvent\">\n      <h2> {{selectedEvent.name}}   </h2>\n      <h3> {{selectedEvent.description}}</h3>\n      <ul><li id=\"link\" (click)=\"onAttend()\"> p\u00E5melding </li></ul>\n\n      <div id=\"attend\" *ngIf=\"selectAttend\">\n      <event-attend></event-attend>\n\n    </div>\n    "
+    }),
+    __metadata("design:paramtypes", [event_service_1.EventService])
+], EventsComponent);
 exports.EventsComponent = EventsComponent;
 //# sourceMappingURL=events.component.js.map

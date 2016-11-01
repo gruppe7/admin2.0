@@ -1,9 +1,14 @@
+/*
+**  Author: Elias Sundby Aukan
+**  This class contains all the tests run with jasmine/karma
+*/
 "use strict";
-var testing_1 = require("@angular/core/testing");
-var http_1 = require("@angular/http");
-var event_service_1 = require("./events/event.service");
-var locker_service_1 = require("./locker/locker.service");
-var index_1 = require("./login/index");
+var testing_1 = require('@angular/core/testing');
+var http_1 = require('@angular/http');
+var event_service_1 = require('./events/event.service');
+var locker_service_1 = require('./locker/locker.service');
+var index_1 = require('./login/index');
+/**  EventService  **/
 describe('Testing EventService', function () {
     var eventService;
     var stdTime;
@@ -24,6 +29,7 @@ describe('Testing EventService', function () {
         });
     });
 });
+/**  LockerService  **/
 describe('Testing LockerService', function () {
     var lockerService;
     beforeEach(function () { lockerService = new locker_service_1.LockerService(); });
@@ -41,9 +47,11 @@ describe('Testing LockerService', function () {
         });
     });
 });
+/** AuthenticationService -- not yet implemented **/
 describe('Testing Authentication', function () {
     var authService;
     beforeEach(function () {
         testing_1.TestBed.configureTestingModule({ providers: [index_1.AuthenticationService, http_1.Http] });
     });
 });
+//# sourceMappingURL=test.spec.js.map

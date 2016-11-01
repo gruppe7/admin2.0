@@ -16,6 +16,10 @@
   ],
   "files": [
       "node_modules/rx/ts/rx.all.d.ts"
+  ],
+  "filesGlob": [
+    "**/*.ts",
+    "**/**/*.ts"
   ]
 
 }
