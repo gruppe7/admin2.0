@@ -24,7 +24,7 @@ var LockerRentComponent = (function () {
     LockerRentComponent = __decorate([
         core_1.Component({
             selector: 'lockerRent',
-            template: 'app/locker/lockerRent/lockerRent.component.html'
+            templateUrl: 'app/locker/lockerRent/lockerRent.component.html'
         }), 
         __metadata('design:paramtypes', [locker_component_1.LockerComponent])
     ], LockerRentComponent);

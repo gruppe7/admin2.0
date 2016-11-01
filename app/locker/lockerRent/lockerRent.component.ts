@@ -10,7 +10,7 @@ import { LockerRent } from './lockerRent';
 
 @Component({
   selector: 'lockerRent',
-  template: 'app/locker/lockerRent/lockerRent.component.html'
+  templateUrl: 'app/locker/lockerRent/lockerRent.component.html'
 })
 
 export class LockerRentComponent {

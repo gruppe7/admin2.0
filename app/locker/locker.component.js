@@ -38,7 +38,7 @@ var LockerComponent = (function () {
     LockerComponent = __decorate([
         core_1.Component({
             selector: 'lockers',
-            template: 'app/locker/locker.component.html',
+            templateUrl: 'app/locker/locker.component.html',
             providers: [locker_service_1.LockerService]
         }), 
         __metadata('design:paramtypes', [locker_service_1.LockerService])

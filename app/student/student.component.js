@@ -9,15 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var student_service_1 = require('./student.service');
 var StudentComponent = (function () {
-    function StudentComponent() {
+    function StudentComponent(studentService) {
+        this.studentService = studentService;
     }
+    StudentComponent.prototype.editUsername = function (student, string) {
+        this.selectedStudent = student;
+        student.username = name;
+        return student.username;
+    };
     StudentComponent = __decorate([
         core_1.Component({
             selector: 'students',
-            template: 'app/student/student.component.html'
+            templateUrl: 'app/student/student.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [student_service_1.StudentService])
     ], StudentComponent);
     return StudentComponent;
 }());

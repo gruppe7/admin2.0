@@ -1,8 +1,16 @@
 <h3> Endre student </h3>
 
-<div id="studentOverview"
+<div id="studentOverview">
 <li *ngFor="let student of students" [class.selected]="student===selectedStudent" (click)="onSelect(student)" >
   <span id="indicator" class="badge"> Navn: {{student.firstname}} {{student.lastname}}
+    <div *ngIf="selectedStudent">
+      <p> Navn: </p>
+        <ul> {{student.firstname}} {{student.lastname}} </ul>
+        <input type="submit" value="Endre">
+    </div>
+</div>
+
   </span>
 </li>
 </div>
+<StudentComponent></StudentComponent>

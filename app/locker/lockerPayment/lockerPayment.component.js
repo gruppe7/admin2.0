@@ -17,7 +17,7 @@ var LockerPaymentComponent = (function () {
     LockerPaymentComponent = __decorate([
         core_1.Component({
             selector: 'lockerPayment',
-            template: 'app/locker/lockerPayment/lockerPayment.component.html'
+            templateUrl: 'app/locker/lockerPayment/lockerPayment.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], LockerPaymentComponent);

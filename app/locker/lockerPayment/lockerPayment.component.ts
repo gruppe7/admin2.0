@@ -10,7 +10,7 @@ import { LockerComponent } from '../locker.component';
 
 @Component({
   selector: 'lockerPayment',
-  template: 'app/locker/lockerPayment/lockerPayment.component.html'
+  templateUrl: 'app/locker/lockerPayment/lockerPayment.component.html'
 })
 
 export class LockerPaymentComponent {
