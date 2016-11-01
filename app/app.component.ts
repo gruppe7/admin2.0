@@ -35,8 +35,10 @@ import { BaseRequestOptions } from '@angular/http';
       <a routerLink="/dashboard">Hjem</a>
       <a routerLink="/events">Events</a>
       <a routerLink="/lockers">Skap</a>
+      <a routerLink="/">Registrering</a>
       <a *ngIf="login" routerLink="/">Profil</a>
 
+      <a *ngIf="login" routerLink="/">Studenter</a>
       <a *ngIf="login" routerLink="/">Opprett Event</a>
       <a *ngIf="login" routerLink="/">Administrer skap</a>
       <a *ngIf="login" routerLink="/">Legg til bruker</a>
