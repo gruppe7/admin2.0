@@ -15,7 +15,9 @@ import { UsersService } from './users/users.service';
 import { User } from './users/user';
 
 import { LoginComponent } from './login/login.component';
-import { AuthenticationService, AuthGuard, AlertService} from './login/index';
+import { AuthenticationService, AuthGuard, AlertService } from './login/index';
+
+import { StudentService } from './student/student.service';
 
 //fake backend
 import { fakeBackendProvider } from './login/fake-backend';
@@ -36,15 +38,17 @@ import { BaseRequestOptions } from '@angular/http';
       <a routerLink="/events">Events</a>
       <a routerLink="/lockers">Skap</a>
       <a routerLink="/">Registrering</a>
-      <a *ngIf="login" routerLink="/">Profil</a>
-
-      <a *ngIf="login" routerLink="/">Studenter</a>
-      <a *ngIf="login" routerLink="/">Opprett Event</a>
-      <a *ngIf="login" routerLink="/">Administrer skap</a>
-      <a *ngIf="login" routerLink="/">Legg til bruker</a>
 
       <a *ngIf="!login" routerLink="/login">Logg inn</a>
       <a *ngIf="login" routerLink="/login">Logg ut</a>
+
+      <div *ngIf="login">
+      <a *ngIf="login" routerLink="/">Profil</a>
+      <a *ngIf="login" routerLink="/students">Studenter</a>
+      <a *ngIf="login" routerLink="/">Opprett Event</a>
+      <a *ngIf="login" routerLink="/">Administrer skap</a>
+      <a *ngIf="login" routerLink="/">Legg til bruker</a>
+      </div>
     </nav>
     </div>
     <div id="content">

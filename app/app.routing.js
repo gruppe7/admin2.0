@@ -4,13 +4,14 @@
 **  Here we declare which component that is displayed at what path.
 */
 "use strict";
-var router_1 = require('@angular/router');
-var events_component_1 = require('./events/events.component');
-var locker_component_1 = require('./locker/locker.component');
-var dashboard_component_1 = require('./dashboard/dashboard.component');
-var login_component_1 = require('./login/login.component');
-var index_1 = require('./login/index');
-var profile_component_1 = require('./profile/profile.component');
+var router_1 = require("@angular/router");
+var events_component_1 = require("./events/events.component");
+var locker_component_1 = require("./locker/locker.component");
+var dashboard_component_1 = require("./dashboard/dashboard.component");
+var student_component_1 = require("./student/student.component");
+var login_component_1 = require("./login/login.component");
+var index_1 = require("./login/index");
+var profile_component_1 = require("./profile/profile.component");
 /*
 **  appRoutes declares the paths with content
 */
@@ -39,6 +40,11 @@ var appRoutes = [
     {
         path: 'profile',
         component: profile_component_1.ProfileComponent,
+        canActivate: [index_1.AuthGuard]
+    },
+    {
+        path: 'students',
+        component: student_component_1.StudentComponent,
         canActivate: [index_1.AuthGuard]
     }
 ];

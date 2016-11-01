@@ -10,6 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EventsComponent } from './events/events.component';
 import { LockerComponent } from './locker/locker.component'
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { StudentComponent } from './student/student.component';
 
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './login/index';
@@ -48,6 +49,11 @@ const appRoutes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthGuard]
 
+  },
+  {
+    path: 'students',
+    component: StudentComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
