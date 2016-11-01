@@ -10,14 +10,7 @@ import { LockerRent } from './lockerRent';
 
 @Component({
   selector: 'lockerRent',
-  template: `
-  <div id="epost">
-    <h1>{{lockerComponent.selectedLocker.id}}</h1>
-    <input type="epost" name="epost">
-    <input type="submit" value="Til betaling" (click)="holdLocker()">
-    <div id="info">Fyll inn din student-epost (brukernavn@stud.ntnu.no)</div>
-  </div>
-`
+  template: 'app/locker/lockerRent/lockerRent.component.html'
 })
 
 export class LockerRentComponent {

@@ -10,14 +10,7 @@ import { LockerComponent } from '../locker.component';
 
 @Component({
   selector: 'lockerPayment',
-  template:`
-  <div id="vipps">
-  <form id="vipps-form">
-    Kvittering fra Vipps:
-    <br> <input type="text" name="kvittering">
-  </form>
-  </div>
-  `
+  template: 'app/locker/lockerPayment/lockerPayment.component.html'
 })
 
 export class LockerPaymentComponent {
