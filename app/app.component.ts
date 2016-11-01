@@ -6,21 +6,14 @@
 
 import { Component, OnInit } from '@angular/core';
 
-
-import { EventService } from './events/event.service';
-
-import { LockerService } from './locker/locker.service';
-
-import { UsersService } from './users/users.service';
-import { User } from './users/user';
-
-import { LoginComponent } from './login/login.component';
-import { AuthenticationService, AuthGuard, AlertService } from './login/index';
-
-import { StudentService } from './student/student.service';
+import { EventService } from './events/index';
+import { LockerService } from './locker/index';
+import { UsersService, User } from './users/index';
+import { AuthenticationService, AuthGuard, AlertService, LoginComponent } from './login/index';
+import { StudentService } from './student/index';
 
 //fake backend
-import { fakeBackendProvider } from './login/fake-backend';
+import { fakeBackendProvider } from './login/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 
@@ -62,6 +55,7 @@ import { BaseRequestOptions } from '@angular/http';
     UsersService,
     AuthenticationService,
     AuthGuard,
+    StudentService,
     AlertService,
     User,
 

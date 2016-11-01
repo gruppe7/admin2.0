@@ -2,11 +2,7 @@
 
 import { Component } from '@angular/core';
 
-import { Locker } from '../locker';
-import { LockerComponent } from '../locker.component';
-import { LockerRent } from './lockerRent';
-
-
+import { Locker, LockerComponent, LockerRent } from '../index';
 
 @Component({
   selector: 'lockerRent',

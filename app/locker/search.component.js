@@ -9,22 +9,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var locker_1 = require('./locker');
+var core_1 = require("@angular/core");
+var index_1 = require("./index");
 var SearchComponent = (function () {
     function SearchComponent(id, etg) {
         this.id = id;
         this.etg = etg;
     }
-    SearchComponent = __decorate([
-        core_1.Component({
-            selector: 'search',
-            template: "\n  <h1>Search</h1>\n  <p>\n\n  </p>\n  ",
-            providers: [locker_1.Locker]
-        }), 
-        __metadata('design:paramtypes', [Number, Number])
-    ], SearchComponent);
     return SearchComponent;
 }());
+SearchComponent = __decorate([
+    core_1.Component({
+        selector: 'search',
+        template: "\n  <h1>Search</h1>\n  <p>\n\n  </p>\n  ",
+        providers: [index_1.Locker]
+    }),
+    __metadata("design:paramtypes", [Number, Number])
+], SearchComponent);
 exports.SearchComponent = SearchComponent;
 //# sourceMappingURL=search.component.js.map

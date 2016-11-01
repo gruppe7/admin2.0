@@ -5,8 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { Locker } from '../locker';
-import { LockerComponent } from '../locker.component';
+import { LockerComponent, Locker } from '../index';
 
 @Component({
   selector: 'lockerPayment',

@@ -2,7 +2,7 @@
 
 import { Component, Input } from '@angular/core';
 
-import { Locker } from './locker';
+import { Locker } from './index';
 
 @Component({
   selector: 'locker-detail',

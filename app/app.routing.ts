@@ -7,15 +7,12 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { EventsComponent } from './events/events.component';
-import { LockerComponent } from './locker/locker.component'
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { StudentComponent } from './student/student.component';
-
-import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './login/index';
-
-import { ProfileComponent } from './profile/profile.component';
+import { EventsComponent } from './events/index';
+import { LockerComponent } from './locker/index'
+import { DashboardComponent } from './dashboard/index';
+import { StudentComponent } from './student/index';
+import { AuthGuard, LoginComponent } from './login/index';
+import { ProfileComponent } from './profile/index';
 
 
 

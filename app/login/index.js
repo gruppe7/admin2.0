@@ -6,4 +6,6 @@ __export(require("./alert.service"));
 __export(require("./authentication.service"));
 __export(require("./auth.guard"));
 __export(require("./login.component"));
+__export(require("./alert.component"));
+__export(require("./fake-backend"));
 //# sourceMappingURL=index.js.map

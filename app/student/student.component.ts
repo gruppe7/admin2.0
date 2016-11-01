@@ -3,8 +3,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { Student } from './student';
-import { StudentService } from './student.service';
+import { Student } from './index';
+import { StudentService } from './student.service'; //have to go around the barrel to avoid errors
 
 
 
@@ -22,7 +22,7 @@ export class StudentComponent{
 
   }
 
-  editUsername(student: Student, string: name): string{
+  editUsername(student: Student, name: string): string{
     this.selectedStudent=student;
     student.username=name;
     return student.username;

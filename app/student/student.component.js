@@ -8,25 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var student_service_1 = require('./student.service');
+var core_1 = require("@angular/core");
+var student_service_1 = require("./student.service"); //have to go around the barrel to avoid errors
 var StudentComponent = (function () {
     function StudentComponent(studentService) {
         this.studentService = studentService;
     }
-    StudentComponent.prototype.editUsername = function (student, string) {
+    StudentComponent.prototype.editUsername = function (student, name) {
         this.selectedStudent = student;
         student.username = name;
         return student.username;
     };
-    StudentComponent = __decorate([
-        core_1.Component({
-            selector: 'students',
-            templateUrl: 'app/student/student.component.html'
-        }), 
-        __metadata('design:paramtypes', [student_service_1.StudentService])
-    ], StudentComponent);
     return StudentComponent;
 }());
+StudentComponent = __decorate([
+    core_1.Component({
+        selector: 'students',
+        templateUrl: 'app/student/student.component.html'
+    }),
+    __metadata("design:paramtypes", [student_service_1.StudentService])
+], StudentComponent);
 exports.StudentComponent = StudentComponent;
 //# sourceMappingURL=student.component.js.map

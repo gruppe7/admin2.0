@@ -9,23 +9,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var locker_1 = require('./locker');
+var core_1 = require("@angular/core");
+var index_1 = require("./index");
 var LockerDetailComponent = (function () {
     function LockerDetailComponent() {
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', locker_1.Locker)
-    ], LockerDetailComponent.prototype, "locker", void 0);
-    LockerDetailComponent = __decorate([
-        core_1.Component({
-            selector: 'locker-detail',
-            template: 'app/locker/locker-detail.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], LockerDetailComponent);
     return LockerDetailComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", index_1.Locker)
+], LockerDetailComponent.prototype, "locker", void 0);
+LockerDetailComponent = __decorate([
+    core_1.Component({
+        selector: 'locker-detail',
+        template: 'app/locker/locker-detail.component.html'
+    }),
+    __metadata("design:paramtypes", [])
+], LockerDetailComponent);
 exports.LockerDetailComponent = LockerDetailComponent;
 //# sourceMappingURL=locker-detail.component.js.map

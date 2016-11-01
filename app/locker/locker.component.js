@@ -9,8 +9,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var locker_service_1 = require('./locker.service');
+var core_1 = require("@angular/core");
+var locker_service_1 = require("./locker.service"); //have to go around the barrel to avoid errors
 var LockerComponent = (function () {
     function LockerComponent(lockerService) {
         this.lockerService = lockerService;
@@ -35,15 +35,15 @@ var LockerComponent = (function () {
         var _this = this;
         this.lockerService.search(this.term).then(function (lockers) { return _this.lockers = lockers; });
     };
-    LockerComponent = __decorate([
-        core_1.Component({
-            selector: 'lockers',
-            templateUrl: 'app/locker/locker.component.html',
-            providers: [locker_service_1.LockerService]
-        }), 
-        __metadata('design:paramtypes', [locker_service_1.LockerService])
-    ], LockerComponent);
     return LockerComponent;
 }());
+LockerComponent = __decorate([
+    core_1.Component({
+        selector: 'lockers',
+        templateUrl: 'app/locker/locker.component.html',
+        providers: [locker_service_1.LockerService]
+    }),
+    __metadata("design:paramtypes", [locker_service_1.LockerService])
+], LockerComponent);
 exports.LockerComponent = LockerComponent;
 //# sourceMappingURL=locker.component.js.map

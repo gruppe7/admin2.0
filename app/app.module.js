@@ -19,16 +19,12 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var app_routing_1 = require("./app.routing");
-var dashboard_component_1 = require("./dashboard/dashboard.component");
-var events_component_1 = require("./events/events.component");
-var event_attend_component_1 = require("./events/event-attend.component");
-var locker_component_1 = require("./locker/locker.component");
-var locker_detail_component_1 = require("./locker/locker-detail.component");
-var lockerRent_component_1 = require("./locker/lockerRent/lockerRent.component");
-var lockerPayment_component_1 = require("./locker/lockerPayment/lockerPayment.component");
-var student_component_1 = require("./student/student.component");
-var index_1 = require("./login/index");
-var profile_component_1 = require("./profile/profile.component");
+var index_1 = require("./dashboard/index");
+var index_2 = require("./events/index");
+var index_3 = require("./locker/index");
+var index_4 = require("./student/index");
+var index_5 = require("./login/index");
+var index_6 = require("./profile/index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -44,18 +40,18 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            events_component_1.EventsComponent,
-            event_attend_component_1.EventAttendComponent,
-            locker_component_1.LockerComponent,
-            locker_detail_component_1.LockerDetailComponent,
-            lockerRent_component_1.LockerRentComponent,
-            lockerPayment_component_1.LockerPaymentComponent,
-            dashboard_component_1.DashboardComponent,
-            index_1.LoginComponent,
-            profile_component_1.ProfileComponent,
-            student_component_1.StudentComponent
+            index_2.EventsComponent,
+            index_2.EventAttendComponent,
+            index_3.LockerComponent,
+            index_3.LockerDetailComponent,
+            index_3.LockerRentComponent,
+            index_3.LockerPaymentComponent,
+            index_1.DashboardComponent,
+            index_5.LoginComponent,
+            index_6.ProfileComponent,
+            index_4.StudentComponent
         ],
-        providers: [index_1.AuthGuard],
+        providers: [index_5.AuthGuard],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])
