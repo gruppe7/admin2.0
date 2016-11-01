@@ -1,5 +1,5 @@
 
-import { Locker } from './locker';
+import { Locker } from './index';
 export const LOCKERS: Locker[] = [
   {id: 101, floor: 1, taken: false},
   {id: 102, floor: 1, taken: false},

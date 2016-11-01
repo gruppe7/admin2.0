@@ -9,8 +9,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var locker_component_1 = require('../locker.component');
+var core_1 = require("@angular/core");
+var index_1 = require("../index");
 var LockerRentComponent = (function () {
     function LockerRentComponent(lockerComponent) {
         this.lockerComponent = lockerComponent;
@@ -21,14 +21,14 @@ var LockerRentComponent = (function () {
     };
     LockerRentComponent.prototype.sendEmail = function () {
     };
-    LockerRentComponent = __decorate([
-        core_1.Component({
-            selector: 'lockerRent',
-            template: 'app/locker/lockerRent/lockerRent.component.html'
-        }), 
-        __metadata('design:paramtypes', [locker_component_1.LockerComponent])
-    ], LockerRentComponent);
     return LockerRentComponent;
 }());
+LockerRentComponent = __decorate([
+    core_1.Component({
+        selector: 'lockerRent',
+        templateUrl: 'app/locker/lockerRent/lockerRent.component.html'
+    }),
+    __metadata("design:paramtypes", [index_1.LockerComponent])
+], LockerRentComponent);
 exports.LockerRentComponent = LockerRentComponent;
 //# sourceMappingURL=lockerRent.component.js.map

@@ -5,7 +5,7 @@
 */
 import { Component, Input } from '@angular/core';
 
-import { Event } from './event';
+import { Event } from './index';
 
 @Component({
   selector: 'event-details',

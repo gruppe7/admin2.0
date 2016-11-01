@@ -5,8 +5,7 @@
 
 import { Component } from '@angular/core';
 
-import { Event } from './event';
-import { EventsComponent } from './events.component';
+import { Event, EventsComponent } from './index';
 
 @Component({
   selector: 'event-attend',

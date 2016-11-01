@@ -9,14 +9,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var mock_lockers_1 = require('./mock-lockers');
+var core_1 = require("@angular/core");
+var index_1 = require("./index");
 var LockerService = (function () {
     //constructor(private jsonp: Jsonp) {}
     function LockerService() {
     }
     LockerService.prototype.getLockers = function () {
-        return Promise.resolve(mock_lockers_1.LOCKERS);
+        return Promise.resolve(index_1.LOCKERS);
     };
     LockerService.prototype.search = function (term) {
         /*
@@ -29,7 +29,7 @@ var LockerService = (function () {
                     .map((response) => response.json()[1]);
         */
         var foundLockers = [];
-        for (var _i = 0, LOCKERS_1 = mock_lockers_1.LOCKERS; _i < LOCKERS_1.length; _i++) {
+        for (var _i = 0, LOCKERS_1 = index_1.LOCKERS; _i < LOCKERS_1.length; _i++) {
             var Locker_1 = LOCKERS_1[_i];
             if (+term === Locker_1.id) {
                 foundLockers.push(Locker_1);
@@ -37,11 +37,11 @@ var LockerService = (function () {
             return Promise.resolve(foundLockers);
         }
     };
-    LockerService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], LockerService);
     return LockerService;
 }());
+LockerService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], LockerService);
 exports.LockerService = LockerService;
 //# sourceMappingURL=locker.service.js.map

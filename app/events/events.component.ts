@@ -6,9 +6,8 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import { EventService } from './event.service'
-import { Event } from './event';
-import { EventAttendComponent } from './event-attend.component'
+import { Event, EventAttendComponent } from './index';
+import { EventService } from './event.service'; //have to go around the barrel to avoid errors
 
  @Component({
    selector: 'events',

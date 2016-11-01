@@ -12,19 +12,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent }   from './app.component';
 import { routing } from './app.routing';
-import { DashboardComponent } from './dashboard/dashboard.component';
-
-import { EventsComponent } from './events/events.component';
-import { EventAttendComponent } from './events/event-attend.component';
-
-import { LockerComponent } from './locker/locker.component';
-import { LockerDetailComponent } from './locker/locker-detail.component';
-import { LockerRentComponent } from './locker/lockerRent/lockerRent.component';
-import { LockerPaymentComponent } from './locker/lockerPayment/lockerPayment.component';
-
-import { LoginComponent } from './login/login.component';
-
-import { ProfileComponent } from './profile/profile.component';
+import { DashboardComponent } from './dashboard/index';
+import { EventsComponent, EventAttendComponent } from './events/index';
+import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
+import { StudentComponent } from './student/index';
+import { LoginComponent, AuthGuard } from './login/index';
+import { ProfileComponent } from './profile/index';
 
 @NgModule({
   imports: [
@@ -43,8 +36,10 @@ import { ProfileComponent } from './profile/profile.component';
     LockerPaymentComponent,
     DashboardComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    StudentComponent
   ],
+  providers: [ AuthGuard ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

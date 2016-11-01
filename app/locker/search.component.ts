@@ -2,8 +2,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, } from '@angular/router';
-import { Locker } from './locker';
-import { LockerService } from './locker.service';
+
+import { Locker } from './index';
+import { LockerService } from './locker.service'; //have to go around the barrel to avoid errors
 
 @Component({
   selector: 'search',

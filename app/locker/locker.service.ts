@@ -4,8 +4,8 @@
 import { Injectable } from '@angular/core';
 import { URLSearchParams, Jsonp } from '@angular/http';
 import { JsonpModule } from '@angular/http';
-import { Locker } from './locker';
-import { LOCKERS } from './mock-lockers';
+import { Locker, LOCKERS } from './index';
+
 
 
 @Injectable()

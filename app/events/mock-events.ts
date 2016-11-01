@@ -1,6 +1,6 @@
 //Author: Elias S. Aukan
 
-import { Event } from './event';
+import { Event } from './index';
 
 export const EVENTS: Event[] = [
   { eventId: 1, name: 'Skolestart', description: 'skolen begynner' },

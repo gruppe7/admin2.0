@@ -2,9 +2,8 @@
 
 
 import { Injectable } from '@angular/core';
-import { LockerRent } from './lockerRent';
-import { LOCKERRENT } from './mock-lockerRent';
 
+import { LockerRent, LOCKERRENT } from '../index';
 
 @Injectable()
 export class LockerRentService{

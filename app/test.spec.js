@@ -3,17 +3,17 @@
 **  This class contains all the tests run with jasmine/karma
 */
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var http_1 = require('@angular/http');
-var event_service_1 = require('./events/event.service');
-var locker_service_1 = require('./locker/locker.service');
-var index_1 = require('./login/index');
+var testing_1 = require("@angular/core/testing");
+var http_1 = require("@angular/http");
+var index_1 = require("./events/index");
+var index_2 = require("./locker/index");
+var index_3 = require("./login/index");
 /**  EventService  **/
 describe('Testing EventService', function () {
     var eventService;
     var stdTime;
     beforeEach(function () {
-        eventService = new event_service_1.EventService();
+        eventService = new index_1.EventService();
     });
     it('#getEvents should return all events', function (done) {
         eventService.getEvents().then(function (events) {
@@ -32,7 +32,7 @@ describe('Testing EventService', function () {
 /**  LockerService  **/
 describe('Testing LockerService', function () {
     var lockerService;
-    beforeEach(function () { lockerService = new locker_service_1.LockerService(); });
+    beforeEach(function () { lockerService = new index_2.LockerService(); });
     it('#getLockers should return all the lockers', function (done) {
         lockerService.getLockers().then(function (lockers) {
             expect(lockers[0].id).toBe(101);
@@ -51,7 +51,7 @@ describe('Testing LockerService', function () {
 describe('Testing Authentication', function () {
     var authService;
     beforeEach(function () {
-        testing_1.TestBed.configureTestingModule({ providers: [index_1.AuthenticationService, http_1.Http] });
+        testing_1.TestBed.configureTestingModule({ providers: [index_3.AuthenticationService, http_1.Http] });
     });
 });
 //# sourceMappingURL=test.spec.js.map

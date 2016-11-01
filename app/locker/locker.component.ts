@@ -5,14 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { LockerService } from './locker.service';
-import { Locker } from './locker';
-import { LockerRentComponent } from './lockerRent/lockerRent.component';
-
+import { Locker, LockerRentComponent } from './index';
+import { LockerService } from './locker.service'; //have to go around the barrel to avoid errors
 
 @Component({
   selector: 'lockers',
-  template: 'app/locker/locker.component.html',
+  templateUrl: 'app/locker/locker.component.html',
   providers: [LockerService]
 })
 export class LockerComponent {

@@ -4,7 +4,7 @@
 */
 
 import { Injectable } from '@angular/core';
-import { Student } from './student';
+import { Student } from './index';
 
 const STUDENTS: Student[] = [
   {  username: 'test', firstname: 'test', lastname: 'test', studyprogram: 'test', year: 2016, verified: true, studentCardId: '000001',}

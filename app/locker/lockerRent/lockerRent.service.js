@@ -9,19 +9,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var mock_lockerRent_1 = require('./mock-lockerRent');
+var core_1 = require("@angular/core");
+var index_1 = require("../index");
 var LockerRentService = (function () {
     function LockerRentService() {
     }
     LockerRentService.prototype.getLockers = function () {
-        return Promise.resolve(mock_lockerRent_1.LOCKERRENT);
+        return Promise.resolve(index_1.LOCKERRENT);
     };
-    LockerRentService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], LockerRentService);
     return LockerRentService;
 }());
+LockerRentService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], LockerRentService);
 exports.LockerRentService = LockerRentService;
 //# sourceMappingURL=lockerRent.service.js.map

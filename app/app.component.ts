@@ -6,19 +6,14 @@
 
 import { Component, OnInit } from '@angular/core';
 
-
-import { EventService } from './events/event.service';
-
-import { LockerService } from './locker/locker.service';
-
-import { UsersService } from './users/users.service';
-import { User } from './users/user';
-
-import { LoginComponent } from './login/login.component';
-import { AuthenticationService, AuthGuard, AlertService} from './login/index';
+import { EventService } from './events/index';
+import { LockerService } from './locker/index';
+import { UsersService, User } from './users/index';
+import { AuthenticationService, AuthGuard, AlertService, LoginComponent } from './login/index';
+import { StudentService } from './student/index';
 
 //fake backend
-import { fakeBackendProvider } from './login/fake-backend';
+import { fakeBackendProvider } from './login/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 
@@ -35,14 +30,18 @@ import { BaseRequestOptions } from '@angular/http';
       <a routerLink="/dashboard">Hjem</a>
       <a routerLink="/events">Events</a>
       <a routerLink="/lockers">Skap</a>
-      <a *ngIf="login" routerLink="/">Profil</a>
-
-      <a *ngIf="login" routerLink="/">Opprett Event</a>
-      <a *ngIf="login" routerLink="/">Administrer skap</a>
-      <a *ngIf="login" routerLink="/">Legg til bruker</a>
+      <a routerLink="/">Registrering</a>
 
       <a *ngIf="!login" routerLink="/login">Logg inn</a>
       <a *ngIf="login" routerLink="/login">Logg ut</a>
+
+      <div *ngIf="login">
+      <a *ngIf="login" routerLink="/">Profil</a>
+      <a *ngIf="login" routerLink="/students">Studenter</a>
+      <a *ngIf="login" routerLink="/">Opprett Event</a>
+      <a *ngIf="login" routerLink="/">Administrer skap</a>
+      <a *ngIf="login" routerLink="/">Legg til bruker</a>
+      </div>
     </nav>
     </div>
     <div id="content">
@@ -56,6 +55,7 @@ import { BaseRequestOptions } from '@angular/http';
     UsersService,
     AuthenticationService,
     AuthGuard,
+    StudentService,
     AlertService,
     User,
 

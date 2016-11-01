@@ -6,14 +6,10 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { Http } from '@angular/http';
 
-import { EventService } from './events/event.service';
-import { Event } from './events/event';
-
-import { LockerService } from './locker/locker.service';
-import { Locker } from './locker/locker';
-
+import { EventService, Event } from './events/index';
+import { LockerService, Locker } from './locker/index';
 import { AuthenticationService } from './login/index';
-import { User } from './users/user'
+import { User } from './users/index'
 
 
 /**  EventService  **/

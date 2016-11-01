@@ -13,18 +13,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 **  This lists out the information of a given Event.
 **  Temporarily not used.
 */
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var EventDetailsComponent = (function () {
     function EventDetailsComponent() {
     }
-    EventDetailsComponent = __decorate([
-        core_1.Component({
-            selector: 'event-details',
-            template: "\n    <div *ngIf=\"event\">\n      <h2>{{event.name}} Detaljer! </h2>\n      <div><label>Navn: </label> {{event.name}}</div>\n      <div>\n        <label>Beskrivelse:</label> {{event.description}}\n      </div>\n    </div>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], EventDetailsComponent);
     return EventDetailsComponent;
 }());
+EventDetailsComponent = __decorate([
+    core_1.Component({
+        selector: 'event-details',
+        template: "\n    <div *ngIf=\"event\">\n      <h2>{{event.name}} Detaljer! </h2>\n      <div><label>Navn: </label> {{event.name}}</div>\n      <div>\n        <label>Beskrivelse:</label> {{event.description}}\n      </div>\n    </div>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], EventDetailsComponent);
 exports.EventDetailsComponent = EventDetailsComponent;
 //# sourceMappingURL=event-details.component.js.map
