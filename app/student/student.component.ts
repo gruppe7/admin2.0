@@ -11,9 +11,9 @@ import { Student } from './student';
 @Component({
   selector: 'students',
   template: 'app/student/student.component.html'
-  providers: [StudentService]
 })
 
 export class StudentComponent{
-  
+  students: Student[];
+  selectedStudent: Student;
 }
