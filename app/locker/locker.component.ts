@@ -12,34 +12,7 @@ import { LockerRentComponent } from './lockerRent/lockerRent.component';
 
 @Component({
   selector: 'lockers',
-  template: `
-    <div  id="lockerOverview" *ngIf="!rentLocker">
-      <div id="rent" *ngIf="selectedLocker">
-        <ul><li id="link" (click)="onAttend()"> Lei skap </li></ul>
-        <div id="attend" *ngIf="selectAttend">
-        <lockerRent></lockerRent>
-        </div>
-      </div>
-    <h3>Skapoversikt</h3>
-    <ul class="skap">
-    <p>
-      <input type="text" [(ngModel)]="term"/>
-      <button type="submit" (click)="search()"> Søk </button>
-    </p>
-      <li *ngFor="let locker of lockers" [class.selected]="locker===selectedLocker" (click)="onSelect(locker)" >
-        <span id="indicator" class="badge"> Skap: {{locker.id}} Etasje: {{locker.floor}}
-        <div *ngIf="locker.taken" id="ledRed"></div>
-        <div *ngIf="!locker.taken" id="ledBlue"></div>
-        </span>
-
-
-      </li>
-    </ul>
-    </div>
-    <div id="lockerRent" *ngIf="rentLocker">
-    <lockerPayment></lockerPayment>
-    </div>
-  `,
+  template: 'app/locker/locker.component.html'
   providers: [LockerService]
 })
 export class LockerComponent {
@@ -51,12 +24,6 @@ export class LockerComponent {
   selectAttend: boolean = false;
   rentLocker: boolean = false;
   constructor(private lockerService: LockerService) {
-  /*  this.term.valueChanges
-              .debounceTime(400)
-              .distinctUntilChanged()
-              .switchMap(term => this.lockerService.search(term)
-              .subscribe(items => this.items = items));
-              */
   }
 
 
@@ -80,6 +47,5 @@ export class LockerComponent {
 
   search(): void {
     this.lockerService.search(this.term).then(lockers => this.lockers=lockers);
-      //.then(items => this.items = items);
   }
 }
