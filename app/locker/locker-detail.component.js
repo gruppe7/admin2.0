@@ -21,7 +21,7 @@ var LockerDetailComponent = (function () {
     LockerDetailComponent = __decorate([
         core_1.Component({
             selector: 'locker-detail',
-            template: "\n    <div *ngIf=\"locker\">\n      <h2>{{locker.description}} details!</h2>\n      <div><label>id: </label>{{locker.id}}</div>\n      <div>\n        <label>floor: </label>\n        <input [(ngModel)]=\"locker.description\" placeholder=\"description\"/>\n      </div>\n    </div>\n  "
+            template: 'app/locker/locker-detail.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], LockerDetailComponent);

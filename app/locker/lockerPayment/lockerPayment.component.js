@@ -17,7 +17,7 @@ var LockerPaymentComponent = (function () {
     LockerPaymentComponent = __decorate([
         core_1.Component({
             selector: 'lockerPayment',
-            template: "\n  <div id=\"vipps\">\n  <form id=\"vipps-form\">\n    Kvittering fra Vipps:\n    <br> <input type=\"text\" name=\"kvittering\">\n  </form>\n  </div>\n  "
+            template: 'app/locker/lockerPayment/lockerPayment.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], LockerPaymentComponent);

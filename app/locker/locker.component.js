@@ -16,12 +16,6 @@ var LockerComponent = (function () {
         this.lockerService = lockerService;
         this.selectAttend = false;
         this.rentLocker = false;
-        /*  this.term.valueChanges
-                    .debounceTime(400)
-                    .distinctUntilChanged()
-                    .switchMap(term => this.lockerService.search(term)
-                    .subscribe(items => this.items = items));
-                    */
     }
     LockerComponent.prototype.onAttend = function () {
         this.selectAttend = true;
@@ -40,12 +34,11 @@ var LockerComponent = (function () {
     LockerComponent.prototype.search = function () {
         var _this = this;
         this.lockerService.search(this.term).then(function (lockers) { return _this.lockers = lockers; });
-        //.then(items => this.items = items);
     };
     LockerComponent = __decorate([
         core_1.Component({
             selector: 'lockers',
-            template: "\n    <div  id=\"lockerOverview\" *ngIf=\"!rentLocker\">\n      <div id=\"rent\" *ngIf=\"selectedLocker\">\n        <ul><li id=\"link\" (click)=\"onAttend()\"> Lei skap </li></ul>\n        <div id=\"attend\" *ngIf=\"selectAttend\">\n        <lockerRent></lockerRent>\n        </div>\n      </div>\n    <h3>Skapoversikt</h3>\n    <ul class=\"skap\">\n    <p>\n      <input type=\"text\" [(ngModel)]=\"term\"/>\n      <button type=\"submit\" (click)=\"search()\"> S\u00F8k </button>\n    </p>\n      <li *ngFor=\"let locker of lockers\" [class.selected]=\"locker===selectedLocker\" (click)=\"onSelect(locker)\" >\n        <span id=\"indicator\" class=\"badge\"> Skap: {{locker.id}} Etasje: {{locker.floor}}\n        <div *ngIf=\"locker.taken\" id=\"ledRed\"></div>\n        <div *ngIf=\"!locker.taken\" id=\"ledBlue\"></div>\n        </span>\n\n\n      </li>\n    </ul>\n    </div>\n    <div id=\"lockerRent\" *ngIf=\"rentLocker\">\n    <lockerPayment></lockerPayment>\n    </div>\n  ",
+            template: 'app/locker/locker.component.html',
             providers: [locker_service_1.LockerService]
         }), 
         __metadata('design:paramtypes', [locker_service_1.LockerService])

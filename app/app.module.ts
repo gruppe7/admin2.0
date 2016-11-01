@@ -10,7 +10,6 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 
-
 import { AppComponent }   from './app.component';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
