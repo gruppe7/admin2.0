@@ -1,4 +1,4 @@
-// Author@Henrik Bjørkheim
+ // Author@Henrik Bjørkheim
 
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,7 +12,7 @@ import { LockerRentComponent } from './lockerRent/lockerRent.component';
 
 @Component({
   selector: 'lockers',
-  template: 'app/locker/locker.component.html'
+  template: 'app/locker/locker.component.html',
   providers: [LockerService]
 })
 export class LockerComponent {
