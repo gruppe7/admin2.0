@@ -2,5 +2,5 @@
 
 export class LockerPayment{
   receipt: string;
-  
+
 }
