@@ -30,7 +30,7 @@ import { BaseRequestOptions } from '@angular/http';
       <a routerLink="/dashboard">Hjem</a>
       <a routerLink="/events">Events</a>
       <a routerLink="/lockers">Skap</a>
-      <a routerLink="/">Registrering</a>
+      <a routerLink="/register">Registrering</a>
 
       <a *ngIf="!login" routerLink="/login">Logg inn</a>
       <a *ngIf="login" routerLink="/login">Logg ut</a>

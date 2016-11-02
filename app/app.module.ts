@@ -15,7 +15,7 @@ import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/index';
 import { EventsComponent, EventAttendComponent } from './events/index';
 import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
-import { StudentComponent } from './student/index';
+import { StudentComponent, StudentRegisterComponent } from './student/index';
 import { LoginComponent, AuthGuard } from './login/index';
 import { ProfileComponent } from './profile/index';
 
@@ -37,7 +37,8 @@ import { ProfileComponent } from './profile/index';
     DashboardComponent,
     LoginComponent,
     ProfileComponent,
-    StudentComponent
+    StudentComponent,
+    StudentRegisterComponent
   ],
   providers: [ AuthGuard ],
   bootstrap:    [ AppComponent ]
