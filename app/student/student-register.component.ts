@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Student, StudentComponent } from './index';
+import { StudentService } from './student.service';
 
 
 @Component({
@@ -12,7 +13,8 @@ export class StudentRegisterComponent {
   model = new Student();
   constructor(){};
 
-  sendEmail(){
+  onSubmit(){
+
   }
 
 
