@@ -5,5 +5,5 @@ export class Student {
   studyprogram: string;
   year: number;
   verified: boolean;
-  studentCardId: string;
+  studentCardId: number;
 }

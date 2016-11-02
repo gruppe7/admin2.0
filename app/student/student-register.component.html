@@ -1,0 +1,37 @@
+<h1> Registrering og verifisering av student </h1>
+<form>
+
+<div class="form-group">
+  <label for="username">NTNU brukernavn </label>
+  <input type="text" name="username" [(ngModel)]="model.username">
+</div>
+
+<div class="form-group">
+  <label for=firstname>Fornavn </label>
+  <input type="text" name="firstname" [(ngModel)]="model.firstame">
+</div>
+
+<div class="form-group">
+  <label for="lastname">Etternavn</label>
+  <input type="text" name="lastname" [(ngModel)]="model.lastname">
+</div>
+
+<div class="form-group">
+  <label for="studyprogram">Studieprogram</label>
+  <input type="text" name="studyprogram" [(ngModel)]="model.studyprogram">
+</div>
+
+<div class="form-group">
+  <label for="year">Oppstartsår</label>
+  <input type="number" name="year" [(ngModel)]="model.year">
+</div>
+
+<div class="form-group">
+  <label for="studentCardId">Studentkort ID</label>
+  <input type="number" name="studentCardId" [(ngModel)]="model.studentCardId">
+</div>
+
+<div class="form-group">
+  <input type="submit" value="Registrer" (click)="onSubmit()">
+</div>
+</form>

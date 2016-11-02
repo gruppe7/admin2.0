@@ -3,7 +3,6 @@
 import { AlertService } from './index';
 
 @Component({
-    moduleId: module.id,
     selector: 'alert',
     template: `
       <div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>

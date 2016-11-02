@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/index';
 import { StudentComponent } from './student/index';
 import { AuthGuard, LoginComponent } from './login/index';
 import { ProfileComponent } from './profile/index';
+import { StudentRegisterComponent } from './student/index';
 
 
 
@@ -51,6 +52,10 @@ const appRoutes: Routes = [
     path: 'students',
     component: StudentComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'register',
+    component: StudentRegisterComponent
   }
 ];
 
