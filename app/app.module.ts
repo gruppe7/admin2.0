@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { Pipe, PipeTransform } from '@angular/core';
 
 
 import { AppComponent }   from './app.component';
@@ -18,6 +19,7 @@ import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaym
 import { StudentComponent, StudentRegisterComponent } from './student/index';
 import { LoginComponent, AuthGuard } from './login/index';
 import { ProfileComponent } from './profile/index';
+import { FilterArrayPipe } from './student/filter.pipe';
 
 @NgModule({
   imports: [
@@ -38,7 +40,8 @@ import { ProfileComponent } from './profile/index';
     LoginComponent,
     ProfileComponent,
     StudentComponent,
-    StudentRegisterComponent
+    StudentRegisterComponent,
+    FilterArrayPipe
   ],
   providers: [ AuthGuard ],
   bootstrap:    [ AppComponent ]
