@@ -10,7 +10,7 @@ import { EventService } from './events/index';
 import { LockerService } from './locker/index';
 import { UsersService, User } from './users/index';
 import { AuthenticationService, AuthGuard, AlertService, LoginComponent } from './login/index';
-import { StudentService } from './student/index';
+import { StudentService, FilterArrayPipe } from './student/index';
 
 //fake backend
 import { fakeBackendProvider } from './login/index';
@@ -29,6 +29,7 @@ import { BaseRequestOptions } from '@angular/http';
     AuthenticationService,
     AuthGuard,
     StudentService,
+    FilterArrayPipe,
     AlertService,
     User,
 

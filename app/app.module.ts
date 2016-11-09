@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { Pipe, PipeTransform } from '@angular/core';
 
 
 import { AppComponent }   from './app.component';
@@ -15,7 +16,7 @@ import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/index';
 import { EventsComponent, EventAttendComponent } from './events/index';
 import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
-import { StudentComponent, StudentRegisterComponent } from './student/index';
+import { StudentComponent, StudentRegisterComponent, FilterArrayPipe } from './student/index';
 import { LoginComponent, AuthGuard } from './login/index';
 import { ProfileComponent } from './profile/index';
 
@@ -38,7 +39,8 @@ import { ProfileComponent } from './profile/index';
     LoginComponent,
     ProfileComponent,
     StudentComponent,
-    StudentRegisterComponent
+    StudentRegisterComponent,
+    FilterArrayPipe
   ],
   providers: [ AuthGuard ],
   bootstrap:    [ AppComponent ]
