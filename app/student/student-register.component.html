@@ -35,3 +35,7 @@
   <input type="submit" value="Registrer" (click)="onSubmit()">
 </div>
 </form>
+
+<div class="registred" *ngIf="registred">
+  <p>Du er registrert med epost {{model.username}}@stud.ntnu.no</p>
+</div>

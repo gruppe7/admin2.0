@@ -16,10 +16,9 @@ import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/index';
 import { EventsComponent, EventAttendComponent } from './events/index';
 import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
-import { StudentComponent, StudentRegisterComponent } from './student/index';
+import { StudentComponent, StudentRegisterComponent, FilterArrayPipe } from './student/index';
 import { LoginComponent, AuthGuard } from './login/index';
 import { ProfileComponent } from './profile/index';
-import { FilterArrayPipe } from './student/filter.pipe';
 
 @NgModule({
   imports: [
