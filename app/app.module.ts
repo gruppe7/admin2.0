@@ -16,7 +16,7 @@ import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/index';
 import { EventsComponent, EventAttendComponent } from './events/index';
 import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
-import { StudentComponent, StudentRegisterComponent, FilterArrayPipe } from './student/index';
+import { StudentService, StudentComponent, StudentRegisterComponent, FilterArrayPipe } from './student/index';
 import { LoginComponent, AuthGuard } from './login/index';
 import { ProfileComponent } from './profile/index';
 
@@ -42,7 +42,7 @@ import { ProfileComponent } from './profile/index';
     StudentRegisterComponent,
     FilterArrayPipe
   ],
-  providers: [ AuthGuard ],
+  providers: [ AuthGuard, StudentService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

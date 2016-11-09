@@ -28,7 +28,6 @@ import { BaseRequestOptions } from '@angular/http';
     UsersService,
     AuthenticationService,
     AuthGuard,
-    StudentService,
     FilterArrayPipe,
     AlertService,
     User,

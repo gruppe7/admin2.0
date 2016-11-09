@@ -24,20 +24,19 @@ export class StudentRegisterComponent {
   constructor(private studentService: StudentService){};
 
   onSubmit(){
-    let registerOperation:Promise<Student>;
+
 
     if(this.model.username != "" && this.model.username != null){
-      registerOperation = this.studentService.newStudent(this.model);
+      this.studentService.newStudent(this.model).subscribe(
+                                    res =>{
+                                      this.model= new Student();
+                                    },
+                                    error=> {
+                                      this.errorMessage = error;
+                                    }
+                                  );
     }
 
-    registerOperation.then(
-                                  res =>{
-                                    this.model= new Student();
-                                  },
-                                  error=> {
-                                    this.errorMessage = error;
-                                  }
-                                );
 
 
   }

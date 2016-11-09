@@ -18,17 +18,17 @@ const STUDENTS: Student[] = [
 export class StudentService{
   constructor(public http: Http){};
 
-  newStudent(student: Student) : Promise<Student>{
+  newStudent(student: Student){
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
     let body = JSON.stringify(student);
 
-    console.log('****' + student.username + "****");
+    console.log('****' + body + "****");
     return this.http
-      .post("http://10.22.168.132:8443/students", body, options)
-      .map((res:Response)=>res.json())
-      .catch((error:any) =>Observable.throw(error.json().error || 'Server Error'))
-      .toPromise();
+      .post("http://localhost:8443/students", body, options)
+      .map((res: Response)=>this.extractData(res))
+
+
   }
 
 

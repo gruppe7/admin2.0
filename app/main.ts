@@ -7,5 +7,6 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app.module';
 import { AuthGuard, AuthenticationService } from './login/index';
+import { StudentService } from './student/index';
 const platform = platformBrowserDynamic();
-platform.bootstrapModule(AppModule, [AuthGuard]);
+platform.bootstrapModule(AppModule, [AuthGuard, StudentService]);
