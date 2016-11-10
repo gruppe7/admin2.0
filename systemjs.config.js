@@ -4,6 +4,9 @@
  */
 (function (global) {
   System.config({
+
+
+
     paths: {
       // paths serve as alias
       'npm:': 'node_modules/',
@@ -43,3 +46,10 @@
     }
   });
 })(this);
+
+System.config(function ($httpProvider) {
+  $httpProvider.defaults.headers.common = {};
+  $httpProvider.defaults.headers.post = {};
+  $httpProvider.defaults.headers.put = {};
+  $httpProvider.defaults.headers.patch = {};
+});

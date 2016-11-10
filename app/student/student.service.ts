@@ -11,24 +11,25 @@ import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 
 const STUDENTS: Student[] = [
-  {  username: 'test', firstname: 'test', lastname: 'test', studyprogram: 'test', year: 2016, verified: true, studentCardId: 1111111111}
+  {  username: 'test', firstname: 'test', lastname: 'test', studyId: 'test', year: 2016, verified: true, studentCardId: 1111111111}
 ]
 
 @Injectable()
 export class StudentService{
   constructor(public http: Http){};
 
-  newStudent(student: Student) : Promise<Student>{
+  newStudent(student: Student){
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
     let body = JSON.stringify(student);
 
-    console.log('****' + student.username + "****");
+    console.log('****' + body  +"****");
     return this.http
-      .post("http://10.22.168.132:8443/students", body, options)
-      .map((res:Response)=>res.json())
-      .catch((error:any) =>Observable.throw(error.json().error || 'Server Error'))
-      .toPromise();
+      .post("http://localhost:8443/students", body, options)
+      .map((res: Response)=>this.extractData(res))
+      .catch(this.handleError);
+
+
   }
 
 
@@ -47,6 +48,7 @@ export class StudentService{
 
 private extractData(res: Response) {
   let body = res.json();
+  console.log(body);
   return body.data || { };
 }
 
@@ -56,6 +58,7 @@ private handleError (error: Response | any) {
     const body = error.json() || '';
     const err = body.error || JSON.stringify(body);
     errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+
   } else {
     errMsg = error.message ? error.message : error.toString();
   }
