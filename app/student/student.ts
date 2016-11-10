@@ -2,7 +2,7 @@ export class Student {
   username: string;
   firstname: string;
   lastname: string;
-  studyprogram: string;
+  studyId: string;
   year: number;
   verified: boolean;
   studentCardId: number;

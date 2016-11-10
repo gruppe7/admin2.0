@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 
 const STUDENTS: Student[] = [
-  {  username: 'test', firstname: 'test', lastname: 'test', studyprogram: 'test', year: 2016, verified: true, studentCardId: 1111111111}
+  {  username: 'test', firstname: 'test', lastname: 'test', studyId: 'test', year: 2016, verified: true, studentCardId: 1111111111}
 ]
 
 @Injectable()
@@ -23,10 +23,11 @@ export class StudentService{
     let options = new RequestOptions({headers: headers});
     let body = JSON.stringify(student);
 
-    console.log('****' + body + "****");
+    console.log('****' + body  +"****");
     return this.http
       .post("http://localhost:8443/students", body, options)
       .map((res: Response)=>this.extractData(res))
+      .catch(this.handleError);
 
 
   }
@@ -47,6 +48,7 @@ export class StudentService{
 
 private extractData(res: Response) {
   let body = res.json();
+  console.log(body);
   return body.data || { };
 }
 
@@ -56,6 +58,7 @@ private handleError (error: Response | any) {
     const body = error.json() || '';
     const err = body.error || JSON.stringify(body);
     errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+
   } else {
     errMsg = error.message ? error.message : error.toString();
   }

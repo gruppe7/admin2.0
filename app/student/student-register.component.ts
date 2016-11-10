@@ -19,20 +19,27 @@ import {Observable} from 'rxjs/Rx';
 export class StudentRegisterComponent {
   model = new Student();
   registred = false;
-  errorMessage ="";
+  loading =false;
+  message ="";
 
   constructor(private studentService: StudentService){};
 
   onSubmit(){
-
+    this.loading =true;
 
     if(this.model.username != "" && this.model.username != null){
       this.studentService.newStudent(this.model).subscribe(
                                     res =>{
                                       this.model= new Student();
+                                      this.loading = false;
+                                      this.message = "du er registrert"
+                                      this.registred = true;
                                     },
                                     error=> {
-                                      this.errorMessage = error;
+                                      this.loading = false;
+                                      this.registred = true;
+                                      this.message = error;
+
                                     }
                                   );
     }
