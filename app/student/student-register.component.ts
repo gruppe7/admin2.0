@@ -32,7 +32,7 @@ export class StudentRegisterComponent {
                                     res =>{
                                       this.model= new Student();
                                       this.loading = false;
-                                      this.message = "du er registrert"
+                                      this.message = "registrering fullført!"
                                       this.registred = true;
                                     },
                                     error=> {
