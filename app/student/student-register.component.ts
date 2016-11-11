@@ -26,13 +26,13 @@ export class StudentRegisterComponent {
 
   onSubmit(){
     this.loading =true;
-
-    if(this.model.username != "" && this.model.username != null){
+    this.message = "";
+    if(this.model.username != "" && this.model.username!=null){
       this.studentService.newStudent(this.model).subscribe(
                                     res =>{
                                       this.model= new Student();
                                       this.loading = false;
-                                      this.message = "registrering fullført!"
+                                      this.message = "registrering fullført!";
                                       this.registred = true;
                                     },
                                     error=> {
@@ -42,6 +42,11 @@ export class StudentRegisterComponent {
 
                                     }
                                   );
+    }else{
+      this.registred = true;
+      this.message = "fyll inn brukernavn!";
+      this.loading=false;
+
     }
 
 
