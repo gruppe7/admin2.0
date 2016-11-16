@@ -14,14 +14,12 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  templateUrl: 'app/app.component.html',
-  
+  templateUrl: 'app/app.component.html'
+
 })
 export class AppComponent implements OnInit{
   title = 'ADMIN 2.0';
   login: boolean;
-
-
   constructor(){
 
   }

@@ -16,7 +16,7 @@ import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/index';
 import { EventsComponent, EventAttendComponent, EventService } from './events/index';
 import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent, LockerService } from './locker/index';
-import { StudentService, StudentComponent, StudentRegisterComponent, FilterArrayPipe } from './student/index';
+import { StudentService, StudentComponent, StudentUpdateComponent, StudentRegisterComponent, FilterArrayPipe } from './student/index';
 import { LoginComponent, AuthGuard, AuthenticationService, AlertService  } from './login/index';
 import { ProfileComponent, ProfileService } from './profile/index';
 import { UsersService, User } from './users/index';
@@ -46,6 +46,7 @@ import { BaseRequestOptions } from '@angular/http';
     ProfileComponent,
     StudentComponent,
     StudentRegisterComponent,
+    StudentUpdateComponent,
     FilterArrayPipe
   ],
   providers: [
