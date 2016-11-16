@@ -28,7 +28,8 @@ export class StudentRegisterComponent {
     this.loading =true;
     this.message = "";
     if(this.model.username != "" && this.model.username!=null){
-      this.studentService.newStudent(this.model).subscribe(
+      this.studentService.newStudent(this.model)
+      .subscribe(
                                     res =>{
                                       this.model= new Student();
                                       this.loading = false;

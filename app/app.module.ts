@@ -14,17 +14,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { AppComponent }   from './app.component';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/index';
-import { EventsComponent, EventAttendComponent, EventService } from './events/index';
-import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent, LockerService } from './locker/index';
-import { StudentService, StudentComponent, StudentUpdateComponent, StudentRegisterComponent, FilterArrayPipe } from './student/index';
-import { LoginComponent, AuthGuard, AuthenticationService, AlertService  } from './login/index';
-import { ProfileComponent, ProfileService } from './profile/index';
-import { UsersService, User } from './users/index';
-
-//fake backend
-import { fakeBackendProvider } from './login/index';
-import { MockBackend, MockConnection } from '@angular/http/testing';
-import { BaseRequestOptions } from '@angular/http';
+import { EventsComponent, EventAttendComponent } from './events/index';
+import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
+import { StudentService, StudentComponent, StudentRegisterComponent, StudentUpdateComponent, FilterArrayPipe } from './student/index';
+import { LoginComponent, AuthGuard } from './login/index';
+import { ProfileComponent } from './profile/index';
 
 @NgModule({
   imports: [
@@ -49,23 +43,7 @@ import { BaseRequestOptions } from '@angular/http';
     StudentUpdateComponent,
     FilterArrayPipe
   ],
-  providers: [
-    AuthGuard,
-    StudentService,
-    EventService,
-    LockerService,
-    UsersService,
-    AuthenticationService,
-    AuthGuard,
-    FilterArrayPipe,
-    AlertService,
-    User,
-
-    // proveders for the fake backend:
-    fakeBackendProvider,
-    MockBackend,
-    BaseRequestOptions
-   ],
+  providers: [ AuthGuard, StudentService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

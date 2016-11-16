@@ -36,7 +36,6 @@ export class StudentService{
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
 
-    console.log("prøver å sende epost");
     console.log("http://localhost:8443/students/"+username+"/updateCode");
     return this.http
       .post("http://localhost:8443/students/"+username+"/updateCode", "{}", options)

@@ -6,20 +6,43 @@
 
 import { Component, OnInit } from '@angular/core';
 
+import { EventService } from './events/index';
+import { LockerService } from './locker/index';
+import { UsersService, User } from './users/index';
+import { AuthenticationService, AuthGuard, AlertService, LoginComponent } from './login/index';
+import { StudentService, FilterArrayPipe } from './student/index';
 
-
-
+//fake backend
+import { fakeBackendProvider } from './login/index';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
 
 
 
 @Component({
   selector: 'my-app',
-  templateUrl: 'app/app.component.html'
+  templateUrl: 'app/app.component.html',
+  providers: [
+    EventService,
+    LockerService,
+    UsersService,
+    AuthenticationService,
+    AuthGuard,
+    FilterArrayPipe,
+    AlertService,
+    User,
 
+    // proveders for the fake backend:
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
+            ]
 })
 export class AppComponent implements OnInit{
   title = 'ADMIN 2.0';
   login: boolean;
+
+
   constructor(){
 
   }
