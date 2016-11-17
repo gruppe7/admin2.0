@@ -4,3 +4,6 @@ export * from './student';
 export * from './student-register.component';
 export * from './filter.pipe';
 export * from './student-update.component';
+export * from './student-updateform.component';
+export * from './object.pipe';
+export * from './study';

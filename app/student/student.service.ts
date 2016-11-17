@@ -4,7 +4,7 @@
 */
 
 import { Injectable } from '@angular/core';
-import { Student } from './index';
+import { Student, Study } from './index';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -16,6 +16,7 @@ const STUDENTS: Student[] = [
 
 @Injectable()
 export class StudentService{
+  url = "http://localhost:8443";
   constructor(public http: Http){};
 
   newStudent(student: Student){
@@ -25,7 +26,7 @@ export class StudentService{
 
     console.log('****' + body  +"****");
     return this.http
-      .post("http://localhost:8443/students", body, options)
+      .post(this.url+"/students", body, options)
       .map((res: Response)=>this.extractData(res))
       .catch(this.handleError);
 
@@ -36,21 +37,21 @@ export class StudentService{
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
 
-    console.log("http://localhost:8443/students/"+username+"/updateCode");
+    console.log(this.url+"/students/"+username+"/updateCode");
     return this.http
-      .post("http://localhost:8443/students/"+username+"/updateCode", "{}", options)
+      .post(this.url+"/students/"+username+"/updateCode", "{}", options)
       .map((res:Response)=>this.extractData(res))
       .catch(this.handleError);
   }
 
 
-  updateStudent(student: Student){
+  updateStudent(student: Student, token:string){
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
     let body = JSON.stringify({year: student.year, studyId: student.studyId, studentCardId: student.studentCardId});
 
     return this.http
-      .post("http://localhost:8443/students/" + student.username + "updatestudent", body, options)
+      .post(this.url+"/students/" + student.username + "updatestudent", body, options)
       .map((res: Response)=>this.extractData(res))
       .catch(this.handleError);
 
@@ -58,7 +59,7 @@ export class StudentService{
 
   getStudents(){
     return this.http
-      .get("http://localhost:8443/students")
+      .get(this.url+"/students")
       .map(this.extractData)
       .catch(this.handleError);
   }
@@ -72,6 +73,14 @@ export class StudentService{
       }
     }
     return null;
+  }
+
+  getStudies(){
+    return this.http
+      .get(this.url+"/studies")
+      .timeout(2000, new Error('Timeout, 2000ms'))
+      .map(res => <Study[]> res.json())
+      .catch(this.handleError);
   }
 
 private extractData(res: Response) {

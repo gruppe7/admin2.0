@@ -3,12 +3,12 @@
 **
 */
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Student, StudentComponent } from './index';
+import { Student, StudentComponent, Study } from './index';
 import { StudentService } from './student.service';
 
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 
 
 @Component({
@@ -16,13 +16,26 @@ import {Observable} from 'rxjs/Rx';
   templateUrl: 'app/student/student-register.component.html'
 })
 
-export class StudentRegisterComponent {
+export class StudentRegisterComponent implements OnInit{
   model = new Student();
   registred = false;
   loading =false;
   message ="";
+  studies: Study[];
 
   constructor(private studentService: StudentService){};
+
+  ngOnInit(){
+  this.studentService.getStudies()
+      .subscribe(
+          res=>{
+            this.studies=res;
+          },
+          error =>{
+            this.message = "Klarte ikke laste inn studieretninger, prøv å last inn siden på nytt.";
+          }
+      )
+  }
 
   onSubmit(){
     this.loading =true;
