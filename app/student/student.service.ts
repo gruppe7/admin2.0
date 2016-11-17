@@ -59,10 +59,10 @@ export class StudentService{
   updateStudent(student: Student, token:string){
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
-    let body = JSON.stringify({year: student.year, studyId: student.studyId, studentCardId: student.studentCardId});
-
+    let body = JSON.stringify({year: student.year, studyId: student.studyId, studentCardId: student.studentCardId, token: token});
+    console.log(body);
     return this.http
-      .post(this.url+"/students/" + student.username + "updatestudent", body, options)
+      .put(this.url+"/students/" + student.username + "/update/", body, options)
       .map((res: Response)=>this.extractData(res))
       .catch(this.handleError);
 
@@ -105,7 +105,7 @@ private handleError (error: Response | any) {
   if (error instanceof Response) {
     const body = error.json() || '';
     const err = body.error || JSON.stringify(body);
-    errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    errMsg = `${err}`;
 
   } else {
     errMsg = error.message ? error.message : error.toString();

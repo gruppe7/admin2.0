@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
-import{ StudentService, Student } from './index';
+import{ StudentService, Student, Study } from './index';
 
 @Component({
   selector: "student-updateform",
@@ -13,18 +13,32 @@ export class StudentUpdateFormComponent implements OnInit{
   model: Student = {  username: '', firstname: '', lastname: '', studyId: '', year: null, verified: false, studentCardId: null};
   loading = false;
   message ="";
+  studies: Study[];
   subscription: Subscription;
   token = localStorage.getItem('token');
 
   constructor(private studentService: StudentService, private route: ActivatedRoute){}
 
   ngOnInit(){
+
+    this.studentService.getStudies()
+        .subscribe(
+            res=>{
+              this.studies=res;
+            },
+            error =>{
+              this.message = "Klarte ikke laste inn studieretninger, prøv å last inn siden på nytt.";
+            }
+        )
+
     this.subscription = this.route.queryParams.subscribe(
       (param: any) => {
-        let username = param['username'];
+        this.model.username = param['username'];
         this.token= param['token'];
-        console.log(username);
       });
+
+
+
   }
 
   onSubmit(){
