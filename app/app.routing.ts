@@ -10,10 +10,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { EventsComponent } from './events/index';
 import { LockerComponent } from './locker/index'
 import { DashboardComponent } from './dashboard/index';
-import { StudentComponent } from './student/index';
 import { AuthGuard, LoginComponent } from './login/index';
 import { ProfileComponent } from './profile/index';
-import { StudentRegisterComponent } from './student/index';
+import { StudentComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, StudentConfirmComponent } from './student/index';
+import { MemberRegisterComponent } from './member/index';
+
 
 
 
@@ -56,6 +57,22 @@ const appRoutes: Routes = [
   {
     path: 'register',
     component: StudentRegisterComponent
+  },
+  {
+    path: 'studentupdate',
+    component: StudentUpdateComponent
+  },
+  {
+    path: 'studentupdate/:user :token',
+    component: StudentUpdateFormComponent
+  },
+  {
+    path: 'students/:username :token',
+    component: StudentConfirmComponent
+  },
+  {
+    path: 'memberregister',
+    component: MemberRegisterComponent
   }
 ];
 
