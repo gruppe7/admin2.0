@@ -10,9 +10,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 
-const STUDENTS: Student[] = [
-  {  username: 'test', firstname: 'test', lastname: 'test', studyId: 'test', year: 2016, verified: true, studentCardId: 1111111111}
-]
 
 @Injectable()
 export class StudentService{
@@ -77,13 +74,8 @@ export class StudentService{
 
 
 
-  getStudentFromCardId(cardId: number): Promise<Student>{
-    for(let Student of STUDENTS){
-      if(cardId == Student.studentCardId){
-        return Promise.resolve(Student);
-      }
-    }
-    return null;
+  getStudentFromCardId(cardId: number){
+
   }
 
   getStudies(){

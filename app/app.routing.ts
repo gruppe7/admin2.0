@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/index';
 import { AuthGuard, LoginComponent } from './login/index';
 import { ProfileComponent } from './profile/index';
 import { StudentComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, StudentConfirmComponent } from './student/index';
+import { MemberRegisterComponent } from './member/index';
 
 
 
@@ -68,6 +69,10 @@ const appRoutes: Routes = [
   {
     path: 'students/:username :token',
     component: StudentConfirmComponent
+  },
+  {
+    path: 'memberregister',
+    component: MemberRegisterComponent
   }
 ];
 
