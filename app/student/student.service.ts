@@ -33,6 +33,17 @@ export class StudentService{
 
   }
 
+  confirmStudent(token: string, username: string){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+    let body = "{\"token\": "+JSON.stringify(token) + "}";
+    console.log(body);
+    return this.http
+      .put(this.url+"/students/"+username, body, options)
+      .map((res:Response)=>this.extractData)
+      .catch(this.handleError);
+  }
+
   requestUpdate(username: string){
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});

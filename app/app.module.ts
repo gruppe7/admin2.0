@@ -16,7 +16,7 @@ import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/index';
 import { EventsComponent, EventAttendComponent } from './events/index';
 import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
-import { StudentService, StudentComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, FilterArrayPipe, ObjectPipe } from './student/index';
+import { StudentService, StudentComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, FilterArrayPipe, StudentConfirmComponent } from './student/index';
 import { LoginComponent, AuthGuard } from './login/index';
 import { ProfileComponent } from './profile/index';
 
@@ -43,7 +43,7 @@ import { ProfileComponent } from './profile/index';
     StudentUpdateComponent,
     StudentUpdateFormComponent,
     FilterArrayPipe,
-    ObjectPipe
+    StudentConfirmComponent
   ],
   providers: [ AuthGuard, StudentService ],
   bootstrap:    [ AppComponent ]

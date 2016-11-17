@@ -19,7 +19,7 @@
 
 <div class="form-group">
   <label for="study">Studieretning</label>
-  <select name="studylist" id="studies"[(ngModel)]="model.studyId"  name="studies" >
+  <select id="studies"[(ngModel)]="model.studyId"  name="studies" >
     <option *ngFor="let s of studies" [value]="s.studyId">{{s.name}}</option>
   </select>
 </div>
