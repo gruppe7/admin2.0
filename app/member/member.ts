@@ -1,6 +1,7 @@
 import { Student } from '../student/index';
 export class Member{
-  student: Student;
+  memberId: number;
+  username: string;
   year: number;
-  payment: boolean;
+  payment: number;
 }
