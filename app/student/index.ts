@@ -5,3 +5,7 @@ export * from './student-register.component';
 export * from './filter.pipe';
 export * from './studentSearch.component';
 export * from './studentSearch-service';
+export * from './student-update.component';
+export * from './student-updateform.component';
+export * from './study';
+export * from './student-confirm.component';

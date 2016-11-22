@@ -17,8 +17,11 @@ import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/index';
 import { EventsComponent, EventAttendComponent } from './events/index';
 import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
-import { StudentService, StudentComponent, StudentRegisterComponent, FilterArrayPipe, SearchService, StudentSearchComponent } from './student/index';
-import { LoginComponent, AuthGuard } from './login/index';
+
+import { StudentService, StudentComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, FilterArrayPipe, StudentConfirmComponent } from './student/index';
+import { MemberService, MemberRegisterComponent, MemberListComponent } from './member/index';
+import { LoginComponent, AuthGuard, AuthenticationService } from './login/index';
+
 import { ProfileComponent } from './profile/index';
 
 @NgModule({
@@ -43,9 +46,14 @@ import { ProfileComponent } from './profile/index';
     StudentComponent,
     StudentRegisterComponent,
     FilterArrayPipe,
-    StudentSearchComponent
+    StudentUpdateComponent,
+    StudentUpdateFormComponent,
+    FilterArrayPipe,
+    StudentConfirmComponent,
+    MemberRegisterComponent,
+    MemberListComponent
   ],
-  providers: [ AuthGuard, StudentService, SearchService ],
+  providers: [ AuthGuard, StudentService, MemberService, AuthenticationService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -6,7 +6,9 @@
   <a routerLink="/dashboard">Hjem</a>
   <a routerLink="/events">Events</a>
   <a routerLink="/lockers">Skap</a>
-  <a routerLink="/register">Registrering</a>
+  <a *ngIf="!login" routerLink="/register">Registrering</a>
+  <a *ngIf="!login" routerLink="/memberregister">Bli medlem</a>
+  <a *ngIf="!login" routerLink="/studentupdate"> Oppdater Studentinfo</a>
 
   <a *ngIf="!login" routerLink="/login">Logg inn</a>
   <a *ngIf="login" routerLink="/login">Logg ut</a>
@@ -15,8 +17,9 @@
   <a *ngIf="login" routerLink="/">Profil</a>
   <a *ngIf="login" routerLink="/students">Studenter</a>
   <a *ngIf="login" routerLink="/">Opprett Event</a>
-  <a *ngIf="login" routerLink="/">Administrer skap</a>
-  <a *ngIf="login" routerLink="/">Legg til bruker</a>
+  <a *ngIf="login" routerLink="/members"> Medlemmer </a>
+  <a *ngIf="login" routerLink="/">Skap</a>
+  <a *ngIf="login" routerLink="/">Brukere</a>
   </div>
 </nav>
 </div>

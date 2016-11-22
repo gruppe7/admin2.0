@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from './events/index';
 import { LockerService } from './locker/index';
 import { UsersService, User } from './users/index';
-import { AuthenticationService, AuthGuard, AlertService, LoginComponent } from './login/index';
+import { AuthGuard, AlertService, LoginComponent } from './login/index';
 import { StudentService, FilterArrayPipe } from './student/index';
 
 //fake backend
@@ -26,7 +26,6 @@ import { BaseRequestOptions } from '@angular/http';
     EventService,
     LockerService,
     UsersService,
-    AuthenticationService,
     AuthGuard,
     FilterArrayPipe,
     AlertService,
@@ -44,15 +43,15 @@ export class AppComponent implements OnInit{
 
 
   constructor(){
-
-  }
-
-  ngOnInit(){
     if(localStorage.getItem('currentUser') !== null ){
       this.login = true;
     }else{
       this.login = false;
     }
+  }
+
+  ngOnInit(){
+
   }
 
 

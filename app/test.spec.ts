@@ -3,8 +3,9 @@
 **  This class contains all the tests run with jasmine/karma
 */
 
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject, describe, beforeEach, it, expect } from '@angular/core/testing';
 import { Http } from '@angular/http';
+
 
 
 import { EventService, Event } from './events/index';

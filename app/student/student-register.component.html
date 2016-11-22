@@ -1,5 +1,5 @@
-<h1> Registrering og verifisering av student </h1>
-<form>
+<h1> Registrering og verifisering av student</h1>
+<form id="registerform">
 
 <div class="form-group">
   <label for="username">NTNU brukernavn </label>
@@ -16,9 +16,12 @@
   <input type="text" name="lastname" [(ngModel)]="model.lastname">
 </div>
 
+
 <div class="form-group">
-  <label for="studyprogram">Studieprogram</label>
-  <input type="number" name="studyprogram" [(ngModel)]="model.studyId">
+  <label for="study">Studieretning</label>
+  <select id="studies"[(ngModel)]="model.studyId"  name="studies" >
+    <option *ngFor="let s of studies" [value]="s.studyId">{{s.name}}</option>
+  </select>
 </div>
 
 <div class="form-group">
@@ -37,7 +40,6 @@
 
 </div>
 </form>
-
 <div class="registred">
   <p>{{message}}</p>
 </div>
