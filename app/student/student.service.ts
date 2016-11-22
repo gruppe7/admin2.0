@@ -36,7 +36,7 @@ export class StudentService{
     let body = "{\"token\": "+JSON.stringify(token) + "}";
     console.log(body);
     return this.http
-      .put(this.url+"/students/"+username, body, options)
+      .put(this.url+"/students/?memberId="+username, body, options)
       .map((res:Response)=>this.extractData)
       .catch(this.handleError);
   }

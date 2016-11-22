@@ -28,13 +28,30 @@ export class MemberService{
   }
 
   confirmMember(member: Member){
-
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+    let body = "{\"token\": "+JSON.stringify(localStorage.getItem('token')) + "}";
+    console.log(body);
+    return this.http
+      .put(this.url + "/members/"+member.memberId, body, options)
   }
 
   getMembers(){
+    console.log(this.url+"/members?token="+localStorage.getItem('token'));
     return this.http
       .get(this.url+"/members?token="+localStorage.getItem('token'))
-      .map(this.extractData)
+      .map((res: Response) => <Member[]> res.json())
+      .catch(this.handleError);
+  }
+
+  deleteMember(member: Member){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+    console.log(this.url+'members/'+member.memberId + '?token='+localStorage.getItem('token'));
+
+    return this.http
+      .delete(this.url+'/members/'+member.memberId + '?token='+localStorage.getItem('token'), options)
+      .map((res: Response) =>this.extractData(res))
       .catch(this.handleError);
   }
 
