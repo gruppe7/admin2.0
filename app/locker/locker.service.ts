@@ -20,15 +20,6 @@ export class LockerService{
 
 
   search(term): Promise<Locker[]>{
-    /*
-    var search = new URLSearchParams()
-    search.set('action', 'opensearch');
-    search.set('search', term);
-    search.set('format', 'json');
-    return this.jsonp
-                .get('Her legger vi inn callback fra Gunnar', { search })
-                .map((response) => response.json()[1]);
-    */
    let foundLockers: Locker[] = [];
     for(let Locker of LOCKERS){
       if(+term === Locker.id){
