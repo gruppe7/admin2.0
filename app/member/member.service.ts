@@ -31,6 +31,13 @@ export class MemberService{
 
   }
 
+  getMembers(){
+    return this.http
+      .get(this.url+"/members?token="+localStorage.getItem('token'))
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
 
 private extractData(res: Response) {
   let body = res.json();
