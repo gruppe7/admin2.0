@@ -10,10 +10,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { EventsComponent } from './events/index';
 import { LockerComponent } from './locker/index'
 import { DashboardComponent } from './dashboard/index';
-import { StudentComponent } from './student/index';
+import { StudentComponent, StudentRegisterComponent, StudentSearchComponent } from './student/index';
 import { AuthGuard, LoginComponent } from './login/index';
 import { ProfileComponent } from './profile/index';
-import { StudentRegisterComponent } from './student/index';
 
 
 
@@ -50,7 +49,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'students',
-    component: StudentComponent,
+    component: StudentSearchComponent,
     canActivate: [AuthGuard]
   },
   {

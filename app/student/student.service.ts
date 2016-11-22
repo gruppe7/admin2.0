@@ -17,6 +17,7 @@ const STUDENTS: Student[] = [
 @Injectable()
 export class StudentService{
   constructor(public http: Http){};
+  private studenturl='/students';
 
   newStudent(student: Student){
     let headers = new Headers({'Content-Type': 'application/json'});
@@ -33,8 +34,10 @@ export class StudentService{
   }
 
 
-  getStudents(): Promise<Student[]>{
-    return Promise.resolve(STUDENTS);
+  getStudents(): Observable<Student[]>{
+    return this.http.get(this.studenturl)
+                        .map(this.extractData)
+                        .catch(this.handleError);
   }
 
   getStudentFromCardId(cardId: number): Promise<Student>{
