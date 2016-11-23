@@ -1,3 +1,6 @@
+/*
+**  Author: Elias Sundby Aukan
+*/
 import { Component, OnInit } from '@angular/core';
 
 import { MemberService, Member } from './index';

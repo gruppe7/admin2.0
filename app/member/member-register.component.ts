@@ -1,3 +1,6 @@
+/*
+**  Author: Elias Sundby Aukan
+*/
 import { Component } from '@angular/core';
 
 import { MemberService, Member } from './index';
@@ -8,7 +11,7 @@ import { MemberService, Member } from './index';
 })
 export class MemberRegisterComponent{
 
-  
+
   username: string;
   year: number;
   receipt: number;

@@ -15,11 +15,11 @@ import { JsonpModule } from '@angular/http';
 import { AppComponent }   from './app.component';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/index';
-import { EventsComponent, EventAttendComponent } from './events/index';
+import { EventsComponent, EventAttendComponent, EventFilterPipe } from './events/index';
 import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
+import { StudentService, StudentListComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, StudentFilterPipe, StudentConfirmComponent } from './student/index';
+import { MemberService, MemberRegisterComponent, MemberListComponent, MemberFilterPipe } from './member/index';
 
-import { StudentService, StudentComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, FilterArrayPipe, StudentConfirmComponent } from './student/index';
-import { MemberService, MemberRegisterComponent, MemberListComponent } from './member/index';
 import { LoginComponent, AuthGuard, AuthenticationService } from './login/index';
 
 import { ProfileComponent } from './profile/index';
@@ -36,6 +36,7 @@ import { ProfileComponent } from './profile/index';
     AppComponent,
     EventsComponent,
     EventAttendComponent,
+    EventFilterPipe,
     LockerComponent,
     LockerDetailComponent,
     LockerRentComponent,
@@ -43,15 +44,15 @@ import { ProfileComponent } from './profile/index';
     DashboardComponent,
     LoginComponent,
     ProfileComponent,
-    StudentComponent,
+    StudentListComponent,
     StudentRegisterComponent,
-    FilterArrayPipe,
     StudentUpdateComponent,
     StudentUpdateFormComponent,
-    FilterArrayPipe,
+    StudentFilterPipe,
     StudentConfirmComponent,
     MemberRegisterComponent,
-    MemberListComponent
+    MemberListComponent,
+    MemberFilterPipe,
   ],
   providers: [ AuthGuard, StudentService, MemberService, AuthenticationService ],
   bootstrap:    [ AppComponent ]
