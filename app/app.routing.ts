@@ -16,8 +16,6 @@ import { StudentListComponent, StudentRegisterComponent, StudentUpdateComponent,
 import { MemberRegisterComponent, MemberListComponent } from './member/index';
 
 
-
-
 /*
 **  appRoutes declares the paths with content
 */

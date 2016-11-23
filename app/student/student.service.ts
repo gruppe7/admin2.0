@@ -15,6 +15,7 @@ import 'rxjs/Rx';
 export class StudentService{
   url = "http://localhost:8443";
   constructor(public http: Http){};
+  private studenturl='/students';
 
   newStudent(student: Student){
     let headers = new Headers({'Content-Type': 'application/json'});
@@ -63,7 +64,7 @@ export class StudentService{
       .map((res: Response)=>this.extractData(res))
       .catch(this.handleError);
 
-  }
+}
 
   getStudents(){
     return this.http

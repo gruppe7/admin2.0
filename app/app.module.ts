@@ -5,10 +5,11 @@
 */
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { Pipe, PipeTransform } from '@angular/core';
+import { JsonpModule } from '@angular/http';
 
 
 import { AppComponent }   from './app.component';
@@ -18,7 +19,9 @@ import { EventsComponent, EventAttendComponent, EventFilterPipe } from './events
 import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
 import { StudentService, StudentListComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, StudentFilterPipe, StudentConfirmComponent } from './student/index';
 import { MemberService, MemberRegisterComponent, MemberListComponent, MemberFilterPipe } from './member/index';
+
 import { LoginComponent, AuthGuard, AuthenticationService } from './login/index';
+
 import { ProfileComponent } from './profile/index';
 
 @NgModule({
@@ -26,7 +29,8 @@ import { ProfileComponent } from './profile/index';
     BrowserModule,
     FormsModule,
     routing,
-    HttpModule
+    HttpModule,
+    JsonpModule
   ],
   declarations: [
     AppComponent,
