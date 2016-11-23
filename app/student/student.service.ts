@@ -67,8 +67,8 @@ export class StudentService{
 
   getStudents(){
     return this.http
-      .get(this.url+"/students")
-      .map(this.extractData)
+      .get(this.url+"/students?token="+localStorage.getItem('token'))
+      .map((res:Response)=> <Student[]> res.json())
       .catch(this.handleError);
   }
 

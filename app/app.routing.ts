@@ -12,7 +12,7 @@ import { LockerComponent } from './locker/index'
 import { DashboardComponent } from './dashboard/index';
 import { AuthGuard, LoginComponent } from './login/index';
 import { ProfileComponent } from './profile/index';
-import { StudentComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, StudentConfirmComponent } from './student/index';
+import { StudentListComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, StudentConfirmComponent } from './student/index';
 import { MemberRegisterComponent, MemberListComponent } from './member/index';
 
 
@@ -51,7 +51,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'students',
-    component: StudentComponent,
+    component: StudentListComponent,
     canActivate: [AuthGuard]
   },
   {
