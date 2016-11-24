@@ -7,16 +7,17 @@
 
 <ul>
   <li *ngFor="let Student of students| studentFilterPipe:listFilter.value" [class.selected]="Student===selectedStudent" (click)="onSelect(Student)">
-    <h3>{{Student.lastname}}<span class="badge"> {{Student.firstname}}  </span></h3>
+    <span class="student-list">{{Student.username}} - {{Student.firstname}} {{Student.lastname}}</span>
   </li>
 </ul>
 
 
 <div id="under" *ngIf="selected">
-  <h1>{{selectedStudent.username}}</h1>
-  <label for="firstname">Fornavn: </label><input type="text" name="firstname" [value]="(selectedStudent.firstname)"/>
-  <label for="lastname">Etternavn: </label><input type="text" name="lastname" [value]="(selectedStudent.lastname)"/>
-  <label for="year">År: </label><input type="number" name="year" [value]="(selectedStudent.year)"/>
+  <h2>{{selectedStudent.username}}</h2>
+  <label for="email">Epost: </label><span name="email">{{selectedStudent.username}}@stud.ntnu.no</span>
+  <label for="firstname">Fornavn: </label><input type="text" name="firstname" [value]="(selectedStudent.firstname)"/><br>
+  <label for="lastname">Etternavn: </label><input type="text" name="lastname" [value]="(selectedStudent.lastname)"/><br>
+  <label for="year">År: </label><input type="number" name="year" [value]="(selectedStudent.year)"/><br>
   <label for="verified">Verifisert: </label> <span name="verified"*ngIf="selectedStudent.verified">JA</span><span name="verified" *ngIf="!selectedStudent.verified">NEI</span><br>
   <button (click)="onClick()">Lagre endringer</button>
 </div>

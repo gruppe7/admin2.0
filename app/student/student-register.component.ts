@@ -5,7 +5,7 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import { Student, StudentComponent, Study, StudentService } from './index';
+import { Student, Study, StudentService } from './index';
 //import { StudentService } from './student.service';
 
 import { Observable } from 'rxjs/Rx';
