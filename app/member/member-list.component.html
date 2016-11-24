@@ -7,14 +7,14 @@
 
 <ul>
   <li *ngFor="let Member of members| memberFilterPipe:listFilter.value" [class.selected]="Member===selectedMember" (click)="onSelect(Member)">
-    <span class="badge"> {{Member.username}}  </span>
+    <span class="student-list"> {{Member.username}}  </span>
   </li>
 </ul>
 
 
 <div id="under" *ngIf="selected">
   <h1>{{selectedMember.username}}</h1>
-  <label for="year">Registrert for: </label><span name="year">{{selectedMember.year}}/{{selectedMember.year +1 }}</span>
+  <label for="year">Registrert for: </label><span name="year">{{selectedMember.year}}/{{selectedMember.year +1 }}</span><br>
   <label for="receipt">Vipps-kvitering: </label><span name="receipt">{{selectedMember.receiptVipps}}</span><br>
   <label for="payment">Godkjent:</label><span name="payment" *ngIf="selectedMember.payment == 1">JA</span><span name="payment" *ngIf="selectedMember.payment==0">NEI</span><br>
   <button (click)="confirmMember()" *ngIf="selectedMember.payment==0">Godkjenn betaling</button>
