@@ -15,7 +15,7 @@ import { JsonpModule } from '@angular/http';
 import { AppComponent }   from './app.component';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/index';
-import { EventsComponent, EventAttendComponent, EventFilterPipe } from './events/index';
+import { EventsComponent, EventAttendComponent, EventFilterPipe, EventService } from './events/index';
 import { LockerComponent, LockerDetailComponent, LockerRentComponent, LockerPaymentComponent } from './locker/index';
 import { StudentService, StudentListComponent, StudentRegisterComponent, StudentUpdateComponent, StudentUpdateFormComponent, StudentFilterPipe, StudentConfirmComponent } from './student/index';
 import { MemberService, MemberRegisterComponent, MemberListComponent, MemberFilterPipe } from './member/index';
@@ -54,7 +54,7 @@ import { ProfileComponent } from './profile/index';
     MemberListComponent,
     MemberFilterPipe,
   ],
-  providers: [ AuthGuard, StudentService, MemberService, AuthenticationService ],
+  providers: [ AuthGuard, StudentService, MemberService, AuthenticationService, EventService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
