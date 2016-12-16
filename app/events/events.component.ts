@@ -17,6 +17,9 @@ import { EventService } from './event.service'; //have to go around the barrel t
    events: Event[];
    selectedEvent: Event;
    selectAttend = false;
+   loading = false;
+   message = "";
+
 
    constructor(private eventService: EventService){
 
@@ -32,13 +35,24 @@ import { EventService } from './event.service'; //have to go around the barrel t
      this.selectAttend = false;
    }
 
-   ngOnInit(): void{
-     this.getEvents();
+   ngOnInit(){
+
+       this.loading=true;
+       this.eventService.getEvents()
+         .subscribe(
+           res=>{
+             this.events = res;
+             this.loading = false;
+           },
+           error =>{
+             this.message = "noe gikk galt ved innlasting av studenter";
+             this.loading = false;
+           }
+         )
+
    }
 
-   getEvents(): void{
-      this.eventService.getEvents().then(events => this.events = events);
-   }
+   
 
 
  }

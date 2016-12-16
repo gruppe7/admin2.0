@@ -9,13 +9,17 @@
 <li *ngFor="let event of events|eventFilterPipe:listFilter.value" [class.selected]="event===selectedEvent" (click)="onSelect(event)">
   <span class="badge"> {{event.eventId}}   </span>{{event.name}}
 </li>
+
 </ul>
 <div id ="under" *ngIf="selectedEvent">
   <h2> {{selectedEvent.name}}   </h2>
+  <h3> {{selectedEvent.date}}   </h3>
   <h3> {{selectedEvent.description}}</h3>
+
   <ul><li id="link" (click)="onAttend()"> påmelding </li></ul>
 
   <div id="attend" *ngIf="selectAttend">
   <event-attend></event-attend>
-
+  </div>
 </div>
+<h3>{{message}}</h3>
