@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 
+import { Event } from './index';
 
 @Injectable()
 export class EventService {
@@ -17,7 +18,26 @@ export class EventService {
   url = "http://localhost:8443";
   constructor(public http: Http){};
 
-  /** Returns all events, only mock events for now **/
+  attendEvent(username: string){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+    let body = JSON.stringify(username);
+
+    /** ToDo: legg inn http-post request **/
+  }
+
+
+  newEvent(event: Event){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+    let body = JSON.stringify(event);
+    return this.http
+      .post(this.url+"/events", body, options)
+      .map((res: Response) => this.extractData(res))
+      .catch(this.handleError);
+  }
+
+  /** Returns all events **/
   getEvents() {
     console.log("GET " + this.url+"/events")
     return this.http
