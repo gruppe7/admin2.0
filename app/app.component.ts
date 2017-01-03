@@ -12,13 +12,6 @@ import { UsersService, User } from './users/index';
 import { AuthGuard, AlertService, LoginComponent } from './login/index';
 import { StudentService} from './student/index';
 
-//fake backend
-import { fakeBackendProvider } from './login/index';
-import { MockBackend, MockConnection } from '@angular/http/testing';
-import { BaseRequestOptions } from '@angular/http';
-
-
-
 
 @Component({
   selector: 'my-app',
@@ -29,12 +22,7 @@ import { BaseRequestOptions } from '@angular/http';
     UsersService,
     AuthGuard,
     AlertService,
-    User,
-
-    // proveders for the fake backend:
-    fakeBackendProvider,
-    MockBackend,
-    BaseRequestOptions
+    User
   ]
 })
 export class AppComponent implements OnInit{
