@@ -7,7 +7,7 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { EventsComponent } from './events/index';
+import { EventsComponent, EventRegisterComponent } from './events/index';
 import { LockerComponent } from './locker/index'
 import { DashboardComponent } from './dashboard/index';
 import { AuthGuard, LoginComponent } from './login/index';
@@ -75,6 +75,11 @@ const appRoutes: Routes = [
   {
     path: 'members',
     component: MemberListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'eventregister',
+    component: EventRegisterComponent,
     canActivate: [AuthGuard]
   }
 ];
