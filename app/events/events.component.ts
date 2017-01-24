@@ -45,14 +45,14 @@ import { EventService } from './event.service'; //have to go around the barrel t
              this.loading = false;
            },
            error =>{
-             this.message = "noe gikk galt ved innlasting av studenter";
+             this.message = "Noe gikk galt ved henting av eventer";
              this.loading = false;
            }
          )
 
    }
 
-   
+
 
 
  }

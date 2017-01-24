@@ -25,7 +25,7 @@ export class EventRegisterComponent{
             this.message = "Event opprettet"
           },
           error =>{
-            this.message = "noe gikk galt ved innlasting av studenter";
+            this.message = "noe gikk galt ved registrering av event";
             this.loading = false;
           }
         )

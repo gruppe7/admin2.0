@@ -33,6 +33,7 @@ h2, h3 {
   font-weight: lighter;
 }
 body {
+  background-color: #f5f5f5;
   color: rgba(0,0,0,0.5);
   font-family: Cambria, Georgia;
 }
@@ -88,7 +89,7 @@ input[text], button {
     width: 5px;
     height: 5px;
     color: black;
-    background-color: white;
+
 }
 
 .badge{
@@ -107,7 +108,7 @@ input[text], button {
 }
 
 .searchbar{
-  
+
 }
 
 ul{
